@@ -216,6 +216,33 @@ function refreshAuthenticationStateHeaderView() {
     }
 }
 
+// Mobile navigation toggle for small screens
+function toggleMobileNav() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const toggleBtn = document.getElementById('mobile-nav-toggle');
+    if (!mobileNav || !toggleBtn) return;
+    const isHidden = mobileNav.classList.contains('hidden');
+    if (isHidden) {
+        mobileNav.classList.remove('hidden');
+        mobileNav.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+    } else {
+        mobileNav.classList.add('hidden');
+        mobileNav.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+}
+
+// Ensure mobile nav closes when resizing to desktop widths
+window.addEventListener('resize', () => {
+    const mobileNav = document.getElementById('mobile-nav');
+    if (!mobileNav) return;
+    if (window.innerWidth > 900) {
+        mobileNav.classList.add('hidden');
+        mobileNav.classList.remove('open');
+    }
+});
+
 // ================= VISUAL BLUEPRINTS CAPTURE AND SUBSTRATE MANAGEMENT SELECTION LAYER =================
 function selectProfileTemplateBlueprint(numericalBlueprintId, stringBlueprintNameTitle) {
     targetedChosenProfileBlueprint = { id: numericalBlueprintId, name: stringBlueprintNameTitle };

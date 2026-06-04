@@ -19,6 +19,10 @@
                 <img src="smard_logo.png" alt="Smar Logo" style="height: 40px; width: auto; object-fit: contain;">
             </div>
 
+            <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle menu" onclick="toggleMobileNav()">
+                <span class="hamburger"></span>
+            </button>
+
             <nav class="central-navigation-links">
                 <a href="#" class="nav-anchor active-anchor" id="lnk-portal" onclick="navigateToWorkspaceView('portal')">Home Portal</a>
                 <a href="#" class="nav-anchor session-dependent-link hidden" id="lnk-dashboard" onclick="navigateToWorkspaceView('dashboard')">Client Dashboard</a>
@@ -30,7 +34,18 @@
             </nav>
 
             <div class="header-session-action-zone" id="auth-header-state-mount">
-                </div>
+            </div>
+
+            <!-- Mobile menu (shown on small screens) -->
+            <div id="mobile-nav" class="mobile-nav hidden">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileNav(); navigateToWorkspaceView('portal')">Home Portal</a>
+                <a href="#" class="mobile-nav-link session-dependent-link hidden" id="mobile-lnk-dashboard" onclick="toggleMobileNav(); navigateToWorkspaceView('dashboard')">Client Dashboard</a>
+                <a href="admin.html" class="mobile-nav-link" onclick="toggleMobileNav()">Admin Portal</a>
+                <a href="#section-about" class="mobile-nav-link" onclick="toggleMobileNav()">About Identity</a>
+                <a href="#section-features" class="mobile-nav-link" onclick="toggleMobileNav()">Core Features</a>
+                <a href="#section-workflow" class="mobile-nav-link" onclick="toggleMobileNav()">System Operations</a>
+                <a href="#section-faqs" class="mobile-nav-link" onclick="toggleMobileNav()">FAQs Desk</a>
+            </div>
 
         </div>
     </header>
