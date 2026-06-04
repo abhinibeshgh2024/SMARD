@@ -385,8 +385,8 @@ body.enterprise-engine-body {
 /* ================= SMART BLUEPRINTS LAYOUTS GRID BLOCKS STRUCTURES ================= */
 .smart-blueprints-showcase-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 28px;
     margin-bottom: 56px;
 }
 
@@ -395,6 +395,19 @@ body.enterprise-engine-body {
     flex-direction: column;
     height: 100%;
 }
+
+@media (max-width: 1080px) {
+    .smart-blueprints-showcase-grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .smart-blueprints-showcase-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .blueprint-box.selected-active-blueprint {
     border-color: var(--g-color-blue) !important;
