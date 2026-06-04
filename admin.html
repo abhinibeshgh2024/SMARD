@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smar Admin Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="enterprise-engine-body">
+    <header class="google-navigation-bar">
+        <div class="header-max-constrain">
+            <div class="smar-logo-container" onclick="window.location.href='index.html'" style="display: flex; align-items: center; cursor: pointer;">
+                <img src="smard_logo.png" alt="Smar Logo" style="height: 38px; width: auto; object-fit: contain;">
+            </div>
+            <nav class="central-navigation-links">
+                <a href="index.html" class="nav-anchor">Home Portal</a>
+                <a href="admin.html" class="nav-anchor active-anchor">Admin Portal</a>
+            </nav>
+        </div>
+    </header>
+    <main class="primary-application-viewport">
+        <div class="workspace-max-constrain">
+            <div id="admin-auth-panel" class="google-animated-card-module admin-login-card">
+                <div class="form-title-bar-node">
+                    <i class="fa-solid fa-lock g-blue-text"></i>
+                    <h2>Admin Portal Authentication</h2>
+                </div>
+
+                <div class="tab-navigation-buttons-container" style="display:flex; gap:12px; margin-bottom:20px; border-bottom:1px solid var(--google-border-color-standard); padding-bottom:12px;">
+                    <button id="admin-tab-login" class="tab-button-nav-element active-tab-btn" onclick="switchAdminAuthMode('login')" style="padding:8px 16px; border:none; background:transparent; color:var(--g-color-blue); font-weight:500; cursor:pointer; border-bottom:2px solid var(--g-color-blue);">Sign In</button>
+                    <button id="admin-tab-register" class="tab-button-nav-element" onclick="switchAdminAuthMode('register')" style="padding:8px 16px; border:none; background:transparent; color:var(--google-text-secondary-muted); font-weight:500; cursor:pointer;">Create Admin Account</button>
+                </div>
+
+                <div class="form-inputs-layout-grid">
+                    <div class="form-input-element-group">
+                        <label for="admin-phone">Phone Number</label>
+                        <input type="tel" id="admin-phone" placeholder="9142543191">
+                    </div>
+                    <div class="form-input-element-group">
+                        <label for="admin-password">Password</label>
+                        <input type="password" id="admin-password" placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div id="admin-auth-error" class="auth-error-output-alert-banner hidden"></div>
+                <button id="admin-auth-submit-btn" class="btn-execute-auth-action-submission" onclick="submitAdminAuth()">Sign In to Admin Portal</button>
+            </div>
+
+            <div id="admin-content-panel" class="admin-content hidden">
+                <div class="google-animated-card-module admin-orders-summary-card">
+                    <div class="form-title-bar-node">
+                        <i class="fa-solid fa-server g-blue-text"></i>
+                        <div>
+                            <h2>Admin Dashboard</h2>
+                            <p class="qr-scanning-caption-text-directive">Logged in as: <strong id="admin-user-name">Admin</strong></p>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; align-items:center;">
+                        <button class="btn-secondary-action" onclick="refreshAdminData()">Refresh Data</button>
+                        <button class="btn-secondary-action" onclick="logoutAdmin()">Logout</button>
+                    </div>
+                </div>
+
+                <div class="google-animated-card-module admin-orders-table-card">
+                    <h3>Registered Users</h3>
+                    <div class="admin-orders-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Orders Count</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-users-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="google-animated-card-module admin-orders-table-card">
+                    <h3>Order Ledger</h3>
+                    <div class="admin-orders-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order UUID</th>
+                                    <th>Timestamp</th>
+                                    <th>Customer</th>
+                                    <th>Blueprint</th>
+                                    <th>Quantity</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-orders-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        let adminAuthenticatedSession = false;
+
+        // Admin credentials (hardcoded for this demo)
+        const ADMIN_CREDENTIALS = {
+            phone: '9142543191',
+            password: 'abhi4natnex26'
+        };
+
+        function simpleHashAdmin(str) {
+            let hash = 0;
+            if (str.length === 0) return hash.toString();
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return Math.abs(hash).toString(16);
+        }
+
+        function switchAdminAuthMode(mode) {
+            const tabLogin = document.getElementById('admin-tab-login');
+            const tabRegister = document.getElementById('admin-tab-register');
+            const submitBtn = document.getElementById('admin-auth-submit-btn');
+            const errorDiv = document.getElementById('admin-auth-error');
+
+            if (mode === 'login') {
+                tabLogin.classList.add('active-tab-btn');
+                tabRegister.classList.remove('active-tab-btn');
+                tabLogin.style.borderBottomColor = 'var(--g-color-blue)';
+                tabLogin.style.color = 'var(--g-color-blue)';
+                tabRegister.style.borderBottomColor = 'transparent';
+                tabRegister.style.color = 'var(--google-text-secondary-muted)';
+                submitBtn.innerText = 'Sign In to Admin Portal';
+            } else {
+                tabLogin.classList.remove('active-tab-btn');
+                tabRegister.classList.add('active-tab-btn');
+                tabLogin.style.borderBottomColor = 'transparent';
+                tabLogin.style.color = 'var(--google-text-secondary-muted)';
+                tabRegister.style.borderBottomColor = 'var(--g-color-blue)';
+                tabRegister.style.color = 'var(--g-color-blue)';
+                submitBtn.innerText = 'Create Admin Account';
+            }
+            errorDiv.classList.add('hidden');
+        }
+
+        function submitAdminAuth() {
+            const phone = document.getElementById('admin-phone').value.trim();
+            const password = document.getElementById('admin-password').value;
+            const errorDiv = document.getElementById('admin-auth-error');
+            const currentMode = document.getElementById('admin-tab-login').classList.contains('active-tab-btn') ? 'login' : 'register';
+
+            if (!phone || !password) {
+                errorDiv.innerText = 'Please enter both phone number and password.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            if (currentMode === 'login') {
+                // Validate admin credentials
+                if (phone === ADMIN_CREDENTIALS.phone && password === ADMIN_CREDENTIALS.password) {
+                    adminAuthenticatedSession = true;
+                    localStorage.setItem('smardAdminSession', JSON.stringify({ authenticated: true, timestamp: Date.now() }));
+                    document.getElementById('admin-auth-panel').classList.add('hidden');
+                    document.getElementById('admin-content-panel').classList.remove('hidden');
+                    document.getElementById('admin-user-name').innerText = 'Admin (' + phone + ')';
+                    refreshAdminData();
+                } else {
+                    errorDiv.innerText = 'Invalid phone or password. Default: 9142543191 / abhi4natnex26';
+                    errorDiv.classList.remove('hidden');
+                }
+            } else {
+                // Sign up mode - only allow the default credentials
+                if (phone === ADMIN_CREDENTIALS.phone && password === ADMIN_CREDENTIALS.password) {
+                    adminAuthenticatedSession = true;
+                    localStorage.setItem('smardAdminSession', JSON.stringify({ authenticated: true, timestamp: Date.now() }));
+                    document.getElementById('admin-auth-panel').classList.add('hidden');
+                    document.getElementById('admin-content-panel').classList.remove('hidden');
+                    document.getElementById('admin-user-name').innerText = 'Admin (' + phone + ')';
+                    refreshAdminData();
+                } else {
+                    errorDiv.innerText = 'Admin account creation not available. Use the default credentials to sign in.';
+                    errorDiv.classList.remove('hidden');
+                }
+            }
+        }
+
+        function refreshAdminData() {
+            const storedDb = localStorage.getItem('smardUserDatabase');
+            const userDb = storedDb ? JSON.parse(storedDb) : [];
+            const storedOrders = JSON.parse(localStorage.getItem('smardAdminOrderLedger') || '[]');
+
+            const usersTbody = document.getElementById('admin-users-tbody');
+            usersTbody.innerHTML = '';
+            userDb.forEach(user => {
+                usersTbody.innerHTML += `
+                    <tr>
+                        <td>${user.name}</td>
+                        <td>${user.phone || 'N/A'}</td>
+                        <td>${user.email}</td>
+                        <td>${user.profileRegistryLedgerArray ? user.profileRegistryLedgerArray.length : 0}</td>
+                    </tr>
+                `;
+            });
+
+            const ordersTbody = document.getElementById('admin-orders-tbody');
+            ordersTbody.innerHTML = '';
+            storedOrders.forEach(order => {
+                ordersTbody.innerHTML += `
+                    <tr>
+                        <td style="font-family:monospace; font-weight:700; color: var(--g-color-blue);">${order.orderUuid}</td>
+                        <td>${order.timestamp}</td>
+                        <td>${order.userName || 'Unknown'}<br><small>${order.userEmail || ''}</small></td>
+                        <td>${order.blueprintModelName}</td>
+                        <td>${order.volumeCount}</td>
+                        <td>₹${order.financialCost}</td>
+                        <td>${order.pipelineStateStatus}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        function logoutAdmin() {
+            adminAuthenticatedSession = false;
+            localStorage.removeItem('smardAdminSession');
+            document.getElementById('admin-auth-panel').classList.remove('hidden');
+            document.getElementById('admin-content-panel').classList.add('hidden');
+            document.getElementById('admin-phone').value = '';
+            document.getElementById('admin-password').value = '';
+            document.getElementById('admin-auth-error').classList.add('hidden');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // Check if admin session exists
+            const adminSession = localStorage.getItem('smardAdminSession');
+            if (adminSession) {
+                try {
+                    adminAuthenticatedSession = true;
+                    document.getElementById('admin-auth-panel').classList.add('hidden');
+                    document.getElementById('admin-content-panel').classList.remove('hidden');
+                    document.getElementById('admin-user-name').innerText = 'Admin (9142543191)';
+                    refreshAdminData();
+                } catch (e) {
+                    adminAuthenticatedSession = false;
+                }
+            } else {
+                document.getElementById('admin-auth-panel').classList.remove('hidden');
+                document.getElementById('admin-content-panel').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

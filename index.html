@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smar Portal - Next-Gen Smart Cards Matrix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="enterprise-engine-body">
+
+    <header class="google-navigation-bar">
+        <div class="header-max-constrain">
+            
+            <div class="smar-logo-container" onclick="navigateToWorkspaceView('portal')" style="display: flex; align-items: center; cursor: pointer;">
+                <img src="smard_logo.png" alt="Smar Logo" style="height: 40px; width: auto; object-fit: contain;">
+            </div>
+
+            <nav class="central-navigation-links">
+                <a href="#" class="nav-anchor active-anchor" id="lnk-portal" onclick="navigateToWorkspaceView('portal')">Home Portal</a>
+                <a href="#" class="nav-anchor session-dependent-link hidden" id="lnk-dashboard" onclick="navigateToWorkspaceView('dashboard')">Client Dashboard</a>
+                <a href="admin.html" class="nav-anchor structural-page-link">Admin Portal</a>
+                <a href="#section-about" class="nav-anchor structural-page-link">About Identity</a>
+                <a href="#section-features" class="nav-anchor structural-page-link">Core Features</a>
+                <a href="#section-workflow" class="nav-anchor structural-page-link">System Operations</a>
+                <a href="#section-faqs" class="nav-anchor structural-page-link">FAQs Desk</a>
+            </nav>
+
+            <div class="header-session-action-zone" id="auth-header-state-mount">
+                </div>
+
+        </div>
+    </header>
+
+    <main class="primary-application-viewport">
+        <div class="workspace-max-constrain">
+
+            <div id="workspace-view-portal" class="application-view-frame active-frame">
+                
+                <div class="intent-segment-selector-wrapper">
+                    <button class="segment-tab-trigger active-trigger" onclick="switchActiveServiceSegment('individual')">Individual Corporate Suite</button>
+                    <button class="segment-tab-trigger" onclick="switchActiveServiceSegment('commercial')">Enterprise B2B Bulk Integration</button>
+                </div>
+
+                <div id="panel-segment-individual" class="service-segment-panel active-panel">
+                    
+                    <div class="portal-marketing-intro-hero">
+                        <h1>Select Your Enterprise Smart Profile Blueprint</h1>
+                        <p>Launch your absolute global footprint. Your first card order is provisioned at <strong>₹0 Absolute Transaction Fee</strong>, regardless of the template blueprint variant selected.</p>
+                    </div>
+
+                    <div class="smart-blueprints-showcase-grid">
+                        
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-1">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b1-gradient-front">Obsidian Matte</div>
+                                <div class="card-face back-face b1-gradient-back">QR Secure Matrix</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Classic Obsidian</h3>
+                                <p>Sleek deep slate aesthetic tailored perfectly for technology architects and security professionals.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(1, 'Classic Obsidian')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-2">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b2-gradient-front">Platinum Executive</div>
+                                <div class="card-face back-face b2-gradient-back">Secure Layer Core</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Minimal Platinum</h3>
+                                <p>Clean silver brushed finish layouts emphasizing minimal typography matching executive nodes profiles.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(2, 'Minimal Platinum')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-3">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b3-gradient-front">Aurora Horizon</div>
+                                <div class="card-face back-face b3-gradient-back">Mesh Identity Link</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Aurora Paradigm</h3>
+                                <p>Vibrant energy shifting cyber gradients designed specifically for creator networks and modern founders.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(3, 'Aurora Paradigm')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-4">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b4-gradient-front">Luxe Rose Gold</div>
+                                <div class="card-face back-face b4-gradient-back">Premium Vector Module</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Rose Gold Luxury</h3>
+                                <p>Sophisticated warm metal tones crafted meticulously for global design agencies and brand consultants.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(4, 'Rose Gold Luxury')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-5">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b5-gradient-front">Matrix Algorithmic</div>
+                                <div class="card-face back-face b5-gradient-back">Vector Data String</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Matrix Crypto Cyber</h3>
+                                <p>High contrast dark terminal neon green aesthetics for cryptography developers and hardware engineers.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(5, 'Matrix Crypto Cyber')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="google-animated-card-module dynamic-configuration-terminal-form hidden" id="card-customization-form-section">
+                        <div class="form-title-bar-node">
+                            <i class="fa-solid fa-sliders g-blue-text"></i>
+                            <h2>Configure Profile Parameters: <span id="lbl-active-configured-blueprint-title">None Selected</span></h2>
+                        </div>
+                        
+                        <div class="form-inputs-layout-grid">
+                            <div class="form-input-element-group">
+                                <label for="field-print-name">Full Professional Name String</label>
+                                <input type="text" id="field-print-name" placeholder="Name to be permanently printed on surface layout">
+                            </div>
+                            <div class="form-input-element-group">
+                                <label for="field-print-designation">Designation / Corporate Mandate</label>
+                                <input type="text" id="field-print-designation" placeholder="e.g. Principal Infrastructure Engineer">
+                            </div>
+                            <div class="form-input-element-group">
+                                <label for="field-print-image">Display Profile Digital Image Asset</label>
+                                <input type="file" id="field-print-image" accept="image/*">
+                            </div>
+                            <div class="form-input-element-group">
+                                <label for="field-infrastructure-module">Wireless Transmission Layer Hardware</label>
+                                <select id="field-infrastructure-module" onchange="evaluateHardwareInfrastructureRequirements(this)">
+                                    <option value="qr-static">Dynamic QR Code High Definition Vector</option>
+                                    <option value="nfc-wireless">NFC Integrated Semiconductor Protocol Module (Unavailable)</option>
+                                </select>
+                            </div>
+                            <div class="form-input-element-group span-full-width-column">
+                                <label for="field-institutional-toggle">Append Institutional Profile Details?</label>
+                                <select id="field-institutional-toggle" onchange="toggleInstitutionalInfoFields(this.value)">
+                                    <option value="disable">No institutional profile data</option>
+                                    <option value="enable">Yes, include institutional education details</option>
+                                </select>
+                            </div>
+                            <div class="form-input-element-group span-full-width-column">
+                                <label for="field-skills-toggle">Include Skills Summary?</label>
+                                <select id="field-skills-toggle" onchange="toggleConditionalSkillsFields(this.value)">
+                                    <option value="disable">No skills summary</option>
+                                    <option value="enable">Yes, show skills section</option>
+                                </select>
+                            </div>
+                            <div class="form-input-element-group span-full-width-column">
+                                <label for="field-projects-toggle">Include Project Highlights?</label>
+                                <select id="field-projects-toggle" onchange="toggleConditionalProjectsFields(this.value)">
+                                    <option value="disable">No project highlights</option>
+                                    <option value="enable">Yes, show project highlights</option>
+                                </select>
+                            </div>
+                            <div class="form-input-element-group span-full-width-column">
+                                <label for="field-contact-toggle">Append Contact Metadata Attributes Subform?</label>
+                                <select id="field-contact-toggle" onchange="toggleConditionalMetadataFields(this.value)">
+                                    <option value="disable">Keep Layout Minimal (No Extended Contact Data)</option>
+                                    <option value="enable">Inject Hyperlinked Extended Contact Coordinates</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="sub-form-conditional-contact-coordinates" class="conditional-sub-form-block hidden">
+                            <div class="form-inputs-layout-grid">
+                                <div class="form-input-element-group">
+                                    <label for="field-contact-phone">Active Voice Mobile Number</label>
+                                    <input type="tel" id="field-contact-phone" placeholder="+91 XXXXX XXXXX">
+                                </div>
+                                <div class="form-input-element-group">
+                                    <label for="field-contact-email">Corporate Public Email Destination</label>
+                                    <input type="email" id="field-contact-email" placeholder="identity@smar.domain">
+                                </div>
+                                <div class="form-input-element-group span-full-width-column">
+                                    <label for="field-residential-address">Residential Address</label>
+                                    <input type="text" id="field-residential-address" placeholder="Street address, locality">
+                                </div>
+                                <div class="form-input-element-group">
+                                    <label for="field-residential-city">City / State</label>
+                                    <input type="text" id="field-residential-city" placeholder="City, State">
+                                </div>
+                                <div class="form-input-element-group">
+                                    <label for="field-residential-postal">Postal / ZIP Code</label>
+                                    <input type="text" id="field-residential-postal" placeholder="Postal / ZIP code">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sub-form-conditional-institutional-info" class="conditional-sub-form-block hidden">
+                            <div class="form-inputs-layout-grid">
+                                <div class="form-input-element-group">
+                                    <label for="field-institution-name">Institution / University Name</label>
+                                    <input type="text" id="field-institution-name" placeholder="Institution name">
+                                </div>
+                                <div class="form-input-element-group">
+                                    <label for="field-institution-program">Program / Degree</label>
+                                    <input type="text" id="field-institution-program" placeholder="Degree or major">
+                                </div>
+                                <div class="form-input-element-group">
+                                    <label for="field-institution-gpa">GPA / Grade</label>
+                                    <input type="text" id="field-institution-gpa" placeholder="3.8 / A+">
+                                </div>
+                                <div class="form-input-element-group">
+                                    <label for="field-institution-batch">Batch Year</label>
+                                    <input type="text" id="field-institution-batch" placeholder="e.g. 2024">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sub-form-conditional-skills" class="conditional-sub-form-block hidden">
+                            <div class="form-input-element-group span-full-width-column">
+                                <label for="field-skills-summary">Skills Summary</label>
+                                <textarea id="field-skills-summary" placeholder="List your top skills or competencies"></textarea>
+                            </div>
+                        </div>
+                        <div id="sub-form-conditional-projects" class="conditional-sub-form-block hidden">
+                            <div class="form-input-element-group span-full-width-column">
+                                <label for="field-projects-highlights">Project Highlights</label>
+                                <textarea id="field-projects-highlights" placeholder="Summarize key projects or achievements"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="panel-segment-commercial" class="service-segment-panel">
+                    <div class="google-animated-card-module commercial-b2b-hero-card">
+                        <i class="fa-solid fa-building-circle-check fa-4x g-blue-text"></i>
+                        <h2>Scaled Enterprise Integrations & Fleet Provisioning</h2>
+                        <p>Provision thousands of synced profiles mapping directly to single source corporate authorization indices. Deploy centralized administrative access dashboard dashboards for immediate real-time corporate validation tracking data layers.</p>
+                        <button class="btn-b2b-corporate-consultation" onclick="alert('Corporate Consultation request cataloged. Our system architects panel will engage inside 24 hours.')">Contact B2B Architecture Desk</button>
+                    </div>
+                </div>
+
+                <hr class="global-section-break-line">
+
+                <section id="section-about" class="google-animated-card-module static-informational-block-card">
+                    <div class="info-block-header"><i class="fa-solid fa-circle-nodes g-blue-text"></i> About Smar Distributed Infrastructure</div>
+                    <p>Smar platforms integrate high-fidelity physical micro-profile templates with digital real-time interactive routing hubs. Powered by underlying enterprise architectural layouts, we map secure print identifiers safely to clean user-managed profile endpoints instantly, changing standard corporate interaction vectors into digital modern solutions.</p>
+                </section>
+
+                <section id="section-features" class="google-animated-card-module static-informational-block-card">
+                    <div class="info-block-header"><i class="fa-solid fa-shield-halved g-green-text"></i> Platform Capability Matrix</div>
+                    <div class="capability-matrix-grid">
+                        <div class="capability-item-node"><i class="fa-solid fa-qrcode g-blue-text"></i><h4>Dynamic Mapping Core</h4><p>Instantly update the target pointer routing destinations anytime from your control panel without changing the printed physical asset asset.</p></div>
+                        <div class="capability-item-node"><i class="fa-solid fa-chart-line g-red-text"></i><h4>Engagement Real-Time Logs</h4><p>Track unique interactions and analytical metrics across multiple distributed geo-locations with clean tracking visibility pipelines.</p></div>
+                        <div class="capability-item-node"><i class="fa-solid fa-fingerprint g-yellow-text"></i><h4>Identity Verification Protocol</h4><p>Enforce cryptographically validated signature parameters safeguarding personal operational contact files maps records strings.</p></div>
+                    </div>
+                </section>
+
+                <section id="section-workflow" class="google-animated-card-module static-informational-block-card">
+                    <div class="info-block-header"><i class="fa-solid fa-bezier-curve g-red-text"></i> Architectural Lifecycle Pipeline</div>
+                    <div class="pipeline-flow-flex-container">
+                        <div class="pipeline-step-node"><div class="step-index-circle">1</div><h4>Select Visual Canvas</h4><p>Choose the base substrate graphic blueprint template matching your brand identity system lines.</p></div>
+                        <div class="pipeline-step-node"><div class="step-index-circle">2</div><h4>Inject Parameters</h4><p>Configure personal metadata configurations attributes forms strings nodes assets variables securely.</p></div>
+                        <div class="pipeline-step-node"><div class="step-index-circle">3</div><h4>Initialize Zero-Fee Node</h4><p>Submit your first promotional order validation checkout mapping pipeline at zero commercial costs due balance.</p></div>
+                    </div>
+                </section>
+
+                <section id="section-faqs" class="google-animated-card-module static-informational-block-card">
+                    <div class="info-block-header"><i class="fa-solid fa-circle-question g-yellow-text"></i> Frequently Answered Technical Operations Questions</div>
+                    <div class="faq-accordion-item-box"><strong>Is the initial promotional smart profile tracking unit completely free?</strong><p>Yes. The platform enforces an absolute zero cost calculation metric on the very first transaction ledger generated by a newly registered account node, across all card styles variants choices.</p></div>
+                    <div class="faq-accordion-item-box"><strong>When will wireless near-field semiconductor features deploy?</strong><p>NFC transmission layer parameters are currently running verification benchmarks within simulated sandboxes. The dynamic static QR structural frame framework is fully operational globally.</p></div>
+                </section>
+
+            </div>
+
+
+            <div id="workspace-view-dashboard" class="application-view-frame">
+                
+                <div class="dashboard-user-hero-header-block">
+                    <h2>Enterprise Node Operations Console: <span id="lbl-dashboard-welcome-user-name">Client Core</span></h2>
+                    <p>Track system performance metrics, modify active routing coordinates, and trace historically generated print ledger configurations.</p>
+                </div>
+
+                <div class="dashboard-analytics-counters-grid">
+                    <div class="google-animated-card-module metric-counter-item-card">
+                        <span class="metric-label-text">Total Provisioned Profiles Logs</span>
+                        <span class="metric-numerical-value-text" id="cnt-metric-total-orders">0</span>
+                    </div>
+                    <div class="google-animated-card-module metric-counter-item-card">
+                        <span class="metric-label-text">Zero-Fee Promotion Status</span>
+                        <span class="metric-numerical-value-text g-green-text" id="cnt-metric-promo-status">Available</span>
+                    </div>
+                    <div class="google-animated-card-module metric-counter-item-card">
+                        <span class="metric-label-text">Node Operational Verification Level</span>
+                        <span class="metric-numerical-value-text g-blue-text" id="cnt-metric-account-tier">Standard Enterprise</span>
+                    </div>
+                </div>
+
+                <div class="google-animated-card-module table-ledger-container-card">
+                    <div class="table-header-title-caption-bar">
+                        <h3>Smart Profile Historical Order Ledger Streams</h3>
+                    </div>
+                    <div class="responsive-table-overflow-axis-wrapper">
+                        <table class="historical-orders-data-table">
+                            <thead>
+                                <tr>
+                                    <th>System Order UUID Token</th>
+                                    <th>Timestamp Generated</th>
+                                    <th>Substrate Variant Blueprint</th>
+                                    <th>Printed Moniker Attribution</th>
+                                    <th>Quantity Nodes</th>
+                                    <th>Invoiced Financial Settlement</th>
+                                    <th>Operational Pipeline State Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mount-target-table-rows-ledger">
+                                </tbody>
+                        </table>
+                    </div>
+                    <div id="placeholder-empty-table-state-notice" class="empty-table-state-fallback-notice">
+                        <i class="fa-solid fa-cubes-stacked fa-3x"></i>
+                        <p>No active smart profiles have been initialized within this profile node context yet. Return to the Home Portal to deploy your first blueprint design template file map.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <div class="modal-blur-curtain-overlay hidden" id="modal-screen-auth-backdrop">
+        <div class="google-animated-card-module integrated-auth-modal-box">
+            <button class="btn-close-modal-window-trigger" onclick="toggleAuthModalWindowDisplayState(false)">&times;</button>
+            
+            <div class="auth-modal-tabs-navigation-header">
+                <button class="auth-toggle-tab-btn active-tab-btn" id="btn-auth-tab-login" onclick="switchActiveAuthFormContextMode('login')">Sign In</button>
+                <button class="auth-toggle-tab-btn" id="btn-auth-tab-register" onclick="switchActiveAuthFormContextMode('register')">Register Identity</button>
+            </div>
+
+            <div class="auth-form-elements-vertical-stack">
+                <div class="form-input-element-group" id="container-field-auth-fullname">
+                    <label for="field-auth-fullname">Account User Full Name Moniker</label>
+                    <input type="text" id="field-auth-fullname" placeholder="e.g. Johnathan Doe">
+                </div>
+                <div class="form-input-element-group" id="container-field-auth-phone">
+                    <label for="field-auth-phone">Registered Phone Number</label>
+                    <input type="tel" id="field-auth-phone" placeholder="+91 XXXXX XXXXX">
+                </div>
+                <div class="form-input-element-group">
+                    <label for="field-auth-email">Linked Email Coordinate Identity</label>
+                    <input type="email" id="field-auth-email" placeholder="user@domain.identity">
+                </div>
+                <div class="form-input-element-group">
+                    <label for="field-auth-password">Security Validation Key Phrase Token</label>
+                    <input type="password" id="field-auth-password" placeholder="••••••••••••">
+                </div>
+
+                <div class="auth-error-output-alert-banner hidden" id="banner-auth-error-feedback-logs">Authentication token mapping failure logs stack.</div>
+
+                <button class="btn-execute-auth-action-submission" id="btn-trigger-auth-execution-engine" onclick="processClientAuthFormSubmission()">Process Security Verification Handshake</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-sidebar-canvas-drawer" class="right-sliding-checkout-drawer-container">
+        <div class="drawer-header-title-bar-node">
+            <h3>Configure Quantity & Financial Settlement</h3>
+            <button class="btn-terminate-drawer-window-trigger" onclick="toggleCheckoutDrawerCanvasDisplayState(false)">&times;</button>
+        </div>
+        
+        <div class="drawer-scrollable-content-body-area">
+            
+            <div id="banner-drawer-guest-verification-warning" class="drawer-guest-warning-notice-box-card">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p><strong>Identity Token Missing:</strong> You are currently configuring parameters under guest constraints. Authenticate or establish a permanent account profile node to authorize secure print operations and track logs history safely.</p>
+                <button class="btn-drawer-guest-auth-shortcut-trigger" onclick="toggleCheckoutDrawerCanvasDisplayState(false); toggleAuthModalWindowDisplayState(true, 'login');">Sign In / Register Portal Now</button>
+            </div>
+
+            <div class="form-input-element-group">
+                <label for="field-drawer-quantity-counter">Required Production Units Volume Count</label>
+                <input type="number" id="field-drawer-quantity-counter" value="1" min="1" oninput="executePricingMatrixCalculationsEngine()">
+            </div>
+
+            <div class="invoice-itemized-summary-panel-card">
+                <div class="invoice-row-line-item"><span>Selected Substrate Design Blueprint:</span> <span id="lbl-summary-blueprint-name-target">None Selected</span></div>
+                <div class="invoice-row-line-item"><span>Platform Allocation Rules Engine Status:</span> <span id="lbl-summary-pricing-tier-badge-target" class="promo-badge-pill-ui">Evaluating parameters...</span></div>
+                <hr class="invoice-dashed-separator-line">
+                <div class="invoice-row-line-item grand-total-line-item"><span>Total Net Invoice Outstanding Due Balance:</span> <span id="lbl-summary-invoice-grand-total-value-target">₹0</span></div>
+            </div>
+
+            <div id="container-native-upi-gateway-hub" class="native-upi-payment-gateway-hub-wrapper hidden">
+                <h4>Payment Gateway Options</h4>
+                <p>Select a secure channel to settle the invoice for your profile batch.</p>
+
+                <div class="payment-methods-grid">
+                    <div class="payment-method-card">
+                        <i class="fa-brands fa-whatsapp fa-3x g-green-text"></i>
+                        <h5>WhatsApp Payment</h5>
+                        <p>Chat with us on WhatsApp and send your payment details securely.</p>
+                        <button class="btn-secondary-action" onclick="sendWhatsAppMessage()">Chat on WhatsApp</button>
+                    </div>
+                    <div class="payment-method-card">
+                        <i class="fa-solid fa-mobile-screen-button fa-3x g-blue-text"></i>
+                        <h5>UPI Gateway</h5>
+                        <p>Open your installed UPI app with the payment amount prefilled.</p>
+                        <button class="btn-secondary-action" onclick="triggerUpiPaymentGateway()">Pay via UPI App</button>
+                    </div>
+                </div>
+
+                <div id="payment-gateway-upi-panel" class="payment-method-detail-panel hidden">
+                    <h5>UPI Payment Gateway</h5>
+                    <p class="qr-scanning-caption-text-directive">Open your UPI app with the order amount already filled.</p>
+                    <button class="btn-drawer-payment-execution-submit-gate" onclick="triggerUpiDeepLink()">Open UPI App for Payment</button>
+                    <p class="qr-scanning-caption-text-directive">If the app does not open, use this fallback UPI link:</p>
+                    <div class="upi-link-fallback"><code id="lbl-upi-fallback-link"></code></div>
+                    <button class="btn-drawer-payment-execution-submit-gate" onclick="confirmPaymentReceivedPaymentGateway()">Confirm Payment Received</button>
+                </div>
+            </div>
+
+            <div id="container-drawer-checkout-actions-mount-zone">
+                </div>
+
+        </div>
+    </div>
+
+    <div id="backdrop-veil-checkout-drawer-curtain" class="global-layout-underlying-backdrop-curtain-veil" onclick="toggleCheckoutDrawerCanvasDisplayState(false)"></div>
+
+    <div class="sticky-floating-horizontal-action-footer-prompt-bar hidden" id="footer-action-proceed-bar-prompt">
+        <div class="footer-prompt-max-constrain">
+            <p class="footer-prompt-meta-info-text-tag"><i class="fa-solid fa-circle-check g-green-text"></i> Configuration blue-print parameters mapped successfully. Ready to compile final allocation logs.</p>
+            <button class="btn-trigger-drawer-canvas-open-action" onclick="toggleCheckoutDrawerCanvasDisplayState(true)">Proceed to Invoice & Checkout Verification <i class="fa-solid fa-arrow-right-long"></i></button>
+        </div>
+    </div>
+
+    <footer class="google-enterprise-footer-section">
+        <div class="footer-max-constrain-layout">
+            
+            <div class="footer-identity-branding-far-left-block">
+                <div class="footer-natnex-corporate-logo-moniker select-none" style="display: flex; align-items: center; gap: 8px;">
+                    <img src="natnex_logo.png" alt="NatNex Logo" style="height: 32px; width: auto; object-fit: contain;">
+                </div>
+                <p class="corporate-copyright-meta-string">&copy; 2026 NatNex Technologies. All infrastructure operations registered.</p>
+            </div>
+
+            <div class="footer-communication-coordinates-spanning-grid-system">
+                
+                <div class="coordinates-column-node">
+                    <h4>Direct Communications</h4>
+                    <p class="hyperlink-coordinate-row"><i class="fa-solid fa-envelope g-blue-text"></i> <a href="mailto:operations@natnex.tech">operations@natnex.tech</a></p>
+                    <p class="hyperlink-coordinate-row"><i class="fa-solid fa-phone g-green-text"></i> <a href="tel:+918005553921">+91 (800) 555-3921</a></p>
+                </div>
+
+                <div class="coordinates-column-node">
+                    <h4>Global HQ Coordinates</h4>
+                    <p class="static-coordinate-text-line"><i class="fa-solid fa-building g-red-text"></i> Executive Innovation Square</p>
+                    <p class="static-coordinate-text-line"><i class="fa-solid fa-map-location-dot g-yellow-text"></i> Visakhapatnam, Andhra Pradesh, India</p>
+                </div>
+
+                <div class="coordinates-column-node">
+                    <h4>Operational Support Desks</h4>
+                    <p class="hyperlink-coordinate-row"><i class="fa-solid fa-headset g-blue-text"></i> <a href="#">Developer Core Documentation</a></p>
+                    <p class="hyperlink-coordinate-row"><i class="fa-solid fa-server g-yellow-text"></i> <a href="#">Distributed Sandbox Matrix status</a></p>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

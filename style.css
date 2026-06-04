@@ -1,0 +1,1013 @@
+/* ================= GLOBAL DESIGN SYSTEM FRAMEWORK VARIABLES & TOKENS ================= */
+:root {
+    --google-white-bg: #ffffff;
+    --google-light-gray-surface: #f8f9fa;
+    --google-border-color-standard: #dadce0;
+    --google-border-color-subtle: #f1f3f4;
+    --google-text-primary-dark: #202124;
+    --google-text-secondary-muted: #5f6368;
+    --google-text-tertiary-light: #70757a;
+    
+    /* Signature Brand Colors Hex Map Definitions */
+    --g-color-blue: #4285F4;
+    --g-color-red: #EA4335;
+    --g-color-yellow: #FBBC05;
+    --g-color-green: #34A853;
+    
+    /* Native Shadows Elevation Coefficients tokens */
+    --elevation-shadow-1: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+    --elevation-shadow-2: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+    --elevation-shadow-3: 0 4px 6px 0 rgba(60,64,67,0.3), 0 8px 24px 6px rgba(60,64,67,0.15);
+}
+
+/* Base Document Reset Layer Configurations Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body.enterprise-engine-body {
+    background-color: var(--google-white-bg);
+    color: var(--google-text-primary-dark);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Color Palette Utility Text Classes */
+.g-blue-text { color: var(--g-color-blue); }
+.g-red-text { color: var(--g-color-red); }
+.g-yellow-text { color: var(--g-color-yellow); }
+.g-green-text { color: var(--g-color-green); }
+
+/* ================= EXCLUSIVE GOOGLE BRAND STYLED TOP HEADER BAR NAVIGATION ================= */
+.google-navigation-bar {
+    background-color: var(--google-white-bg);
+    border-bottom: 1px solid var(--google-border-color-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+}
+
+.header-max-constrain {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.smar-logo-container {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.smar-logo-container span {
+    display: inline-block;
+}
+
+.smar-logo-container .g-blue { color: var(--g-color-blue); }
+.smar-logo-container .g-red { color: var(--g-color-red); }
+.smar-logo-container .g-yellow { color: var(--g-color-yellow); }
+.smar-logo-container .g-green { color: var(--g-color-green); }
+
+.central-navigation-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-anchor {
+    text-decoration: none;
+    color: var(--google-text-secondary-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.nav-anchor:hover {
+    color: var(--google-text-primary-dark);
+    background-color: var(--google-light-gray-surface);
+}
+
+.nav-anchor.active-anchor {
+    color: var(--g-color-blue);
+    background-color: rgba(66, 133, 244, 0.06);
+    border: 1px solid rgba(66, 133, 244, 0.15);
+}
+
+/* User Account Profile Badging & Sign In Buttons Structures Layouts */
+.header-session-action-zone {
+    display: flex;
+    align-items: center;
+}
+
+.btn-header-login-trigger-action {
+    background-color: var(--g-color-blue);
+    color: var(--google-white-bg);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-header-login-trigger-action:hover {
+    background-color: #357ae8;
+    box-shadow: var(--elevation-shadow-1);
+}
+
+.user-profile-session-badge-node {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--google-light-gray-surface);
+    border: 1px solid var(--google-border-color-standard);
+    padding: 6px 16px;
+    border-radius: 30px;
+}
+
+.user-profile-session-badge-node span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--google-text-primary-dark);
+}
+
+.btn-session-logout-directive-link {
+    background: none;
+    border: none;
+    color: var(--g-color-red);
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    transition: transform 0.2s;
+}
+
+.btn-session-logout-directive-link:hover {
+    transform: scale(1.15);
+}
+
+/* ================= CENTRAL CONTAINER CORE AND WORKSPACE SCHEMATICS ================= */
+.primary-application-viewport {
+    flex-grow: 1;
+    width: 100%;
+    padding: 40px 24px;
+    background-color: var(--google-white-bg);
+}
+
+.workspace-max-constrain {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Dynamic Content Frame Controllers Display Blocks Rules */
+.application-view-frame {
+    display: none;
+}
+
+.application-view-frame.active-frame {
+    display: block;
+    animation: applicationFrameEntranceFadeTransition 0.4s ease-out forwards;
+}
+
+/* Intent Tab Segment Switchers Design Components Layouts */
+.intent-segment-selector-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+}
+
+.segment-tab-trigger {
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    color: var(--google-text-secondary-muted);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.segment-tab-trigger:hover {
+    background-color: var(--google-light-gray-surface);
+    color: var(--google-text-primary-dark);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.segment-tab-trigger.active-trigger {
+    border-color: transparent;
+    background-color: var(--google-text-primary-dark);
+    color: var(--google-white-bg);
+    box-shadow: var(--elevation-shadow-1);
+}
+
+.service-segment-panel { display: none; }
+.service-segment-panel.active-panel { display: block; }
+
+.portal-marketing-intro-hero {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 40px auto;
+}
+
+.portal-marketing-intro-hero h1 {
+    font-size: 2.25rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    color: var(--google-text-primary-dark);
+}
+
+.portal-marketing-intro-hero p {
+    font-size: 1.05rem;
+    color: var(--google-text-secondary-muted);
+    line-height: 1.5;
+}
+
+.portal-marketing-intro-hero strong {
+    color: var(--g-color-green);
+    font-weight: 500;
+}
+
+/* ================= COMPLETE CORE GOOGLE ANIMATED ROLLING BORDER MECHANICS ================= */
+.google-animated-card-module {
+    position: relative;
+    background: var(--google-white-bg);
+    border-radius: 16px;
+    border: 1px solid var(--google-border-color-standard);
+    z-index: 1;
+    overflow: hidden;
+    transition: box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+/* Material Shadow Triggers Elevate Bounds States */
+.google-animated-card-module:hover {
+    border-color: transparent;
+    box-shadow: var(--elevation-shadow-2);
+}
+
+/* The underlying scrolling colorful conic track mapping background layer */
+.google-animated-card-module::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        var(--g-color-blue) 0deg,
+        var(--g-color-red) 90deg,
+        var(--g-color-yellow) 180deg,
+        var(--g-color-green) 270deg,
+        var(--g-color-blue) 360deg
+    );
+    animation: coreSystemGlowBorderSpinRotation 3.5s linear infinite;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* The structural central white overlay masking component to secure border density look */
+.google-animated-card-module::after {
+    content: '';
+    position: absolute;
+    inset: 3px; /* Determines the thin crisp 3px rolling border width line */
+    background: var(--google-white-bg);
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* Synchronized revelation loops mappings across hover paths */
+.google-animated-card-module:hover::before,
+.google-animated-card-module:hover::after {
+    opacity: 1;
+}
+
+/* ================= SMART BLUEPRINTS LAYOUTS GRID BLOCKS STRUCTURES ================= */
+.smart-blueprints-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+    margin-bottom: 56px;
+}
+
+.blueprint-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blueprint-box.selected-active-blueprint {
+    border-color: var(--g-color-blue) !important;
+    background-color: rgba(66, 133, 244, 0.01);
+}
+
+.blueprint-vector-preview-box {
+    padding: 24px;
+    background-color: var(--google-light-gray-surface);
+    border-bottom: 1px solid var(--google-border-color-subtle);
+    display: flex;
+    gap: 12px;
+}
+
+.card-face {
+    flex: 1;
+    height: 130px;
+    border-radius: 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.15);
+    color: var(--google-white-bg);
+}
+
+/* Layout Color Schemes Variables Mapping Presets Visual Graphics elements grids layers */
+.b1-gradient-front { background: linear-gradient(135deg, #2c3e50, #0f172a); border-left: 4px solid var(--g-color-blue); }
+.b1-gradient-back { background: #1e293b; color: rgba(255,255,255,0.6); }
+.b2-gradient-front { background: linear-gradient(135deg, #e2e8f0, #cbd5e1); color: #334155; box-shadow: inset 0 0 20px rgba(0,0,0,0.05); border-left: 4px solid var(--google-text-secondary-muted); }
+.b2-gradient-back { background: #f1f5f9; color: #64748b; }
+.b3-gradient-front { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+.b3-gradient-back { background: linear-gradient(135deg, #0072ff, #00c6ff); }
+.b4-gradient-front { background: linear-gradient(135deg, #f7b733, #fc4a1a); }
+.b4-gradient-back { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
+.b5-gradient-front { background: #0b150d; color: #00ff66; border: 1px solid rgba(0,255,102,0.3); }
+.b5-gradient-back { background: #040805; color: #00ff66; }
+
+.blueprint-meta-details-box {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.blueprint-meta-details-box h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--google-text-primary-dark);
+}
+
+.blueprint-meta-details-box p {
+    font-size: 0.88rem;
+    color: var(--google-text-secondary-muted);
+    line-height: 1.45;
+    margin-bottom: 20px;
+}
+
+.btn-blueprint-selection-action {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    color: var(--g-color-blue);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-blueprint-selection-action:hover,
+.blueprint-box.selected-active-blueprint .btn-blueprint-selection-action {
+    background-color: var(--g-color-blue);
+    color: var(--google-white-bg);
+    border-color: var(--g-color-blue);
+}
+
+/* ================= CONFIGURATION USER TERMINAL FORM DESIGNS ELEMENTS INPUTS ================= */
+.dynamic-configuration-terminal-form {
+    padding: 32px;
+    margin-top: 16px;
+}
+
+.form-title-bar-node {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--google-border-color-subtle);
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+}
+
+.form-title-bar-node i { font-size: 1.5rem; }
+.form-title-bar-node h2 { font-size: 1.4rem; font-weight: 400; }
+.form-title-bar-node span { color: var(--g-color-blue); font-weight: 500; }
+
+.form-inputs-layout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.span-full-width-column { grid-column: 1 / -1; }
+
+.form-input-element-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-input-element-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--google-text-secondary-muted);
+}
+
+.form-input-element-group input,
+.form-input-element-group select,
+.form-input-element-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 8px;
+    color: var(--google-text-primary-dark);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input-element-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-input-element-group input:focus,
+.form-input-element-group select:focus,
+.form-input-element-group textarea:focus {
+    border-color: var(--g-color-blue);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+.nfc-disabled-state-input-style {
+    background-color: #f5f5f5 !important;
+    color: var(--google-text-tertiary-light) !important;
+    cursor: not-allowed !important;
+}
+
+.conditional-sub-form-block {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px dashed var(--google-border-color-standard);
+    animation: applicationFrameEntranceFadeTransition 0.3s ease-out;
+}
+
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.payment-method-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 22px;
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 16px;
+    background-color: var(--google-light-gray-surface);
+}
+
+.payment-method-card h5 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--google-text-primary-dark);
+}
+
+.btn-secondary-action {
+    background-color: rgba(66, 133, 244, 0.1);
+    color: var(--g-color-blue);
+    border: 1px solid rgba(66, 133, 244, 0.35);
+    border-radius: 999px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-secondary-action:hover {
+    background-color: rgba(66, 133, 244, 0.18);
+    transform: translateY(-1px);
+}
+
+.payment-method-detail-panel {
+    margin-top: 24px;
+    padding: 22px;
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 16px;
+    background-color: var(--google-light-gray-surface);
+}
+
+.upi-link-fallback {
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    background-color: #f1f3f4;
+    word-break: break-all;
+    font-family: monospace;
+    color: var(--google-text-secondary-muted);
+}
+
+.drawer-payment-instruction {
+    color: var(--google-text-secondary-muted);
+    font-size: 0.95rem;
+    margin: 18px 0 0;
+}
+
+.admin-orders-summary-card {
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+.admin-login-card {
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 32px;
+}
+
+.admin-content {
+    display: block;
+}
+
+.admin-content.hidden {
+    display: none;
+}
+
+.tab-button-nav-element {
+    transition: all 0.2s ease;
+}
+
+.tab-button-nav-element:hover {
+    opacity: 0.8;
+}
+
+.admin-orders-table-container {
+    overflow-x: auto;
+}
+
+.admin-orders-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-orders-table-container th,
+.admin-orders-table-container td {
+    border: 1px solid var(--google-border-color-standard);
+    padding: 12px 14px;
+    vertical-align: top;
+}
+
+.admin-orders-table-container th {
+    background-color: var(--google-light-gray-surface);
+    font-weight: 600;
+}
+
+.admin-detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-detail-list li {
+    font-size: 0.9rem;
+    color: var(--google-text-secondary-muted);
+    margin-bottom: 6px;
+}
+
+/* Commercial B2B UI Panels Blocks styles cards sections blueprints lines vectors sets */
+.commercial-b2b-hero-card {
+    text-align: center;
+    padding: 64px 32px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+.commercial-b2b-hero-card h2 { margin: 20px 0 10px 0; font-size: 1.6rem; font-weight: 400; }
+.commercial-b2b-hero-card p { color: var(--google-text-secondary-muted); line-height: 1.5; margin-bottom: 28px; font-size: 0.98rem; }
+.btn-b2b-corporate-consultation {
+    background-color: var(--google-text-primary-dark); color: var(--google-white-bg); border: none;
+    padding: 14px 36px; border-radius: 50px; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: 0.2s;
+}
+.btn-b2b-corporate-consultation:hover { background-color: #3c4043; box-shadow: var(--elevation-shadow-1); }
+
+/* ================= CLIENT NODE OPERATIONS DASHBOARD IMPLEMENTATIONS ================= */
+.dashboard-user-hero-header-block {
+    margin-bottom: 40px;
+    border-left: 4px solid var(--g-color-blue);
+    padding-left: 18px;
+}
+.dashboard-user-hero-header-block h2 { font-size: 1.75rem; font-weight: 400; margin-bottom: 6px; }
+.dashboard-user-hero-header-block p { color: var(--google-text-secondary-muted); font-size: 0.95rem; }
+
+.dashboard-analytics-counters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 44px;
+}
+
+.metric-counter-item-card {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.metric-label-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--google-text-secondary-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-numerical-value-text {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--google-text-primary-dark);
+}
+
+.table-ledger-container-card { padding: 0; overflow: hidden; }
+.table-header-title-caption-bar { padding: 24px 32px 16px 32px; border-bottom: 1px solid var(--google-border-color-subtle); }
+.table-header-title-caption-bar h3 { font-size: 1.15rem; font-weight: 500; }
+
+.responsive-table-overflow-axis-wrapper { width: 100%; overflow-x: auto; }
+.historical-orders-data-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left; min-width: 850px; }
+.historical-orders-data-table th, .historical-orders-data-table td { padding: 16px 32px; border-bottom: 1px solid var(--google-border-color-subtle); }
+.historical-orders-data-table th { background-color: var(--google-light-gray-surface); color: var(--google-text-secondary-muted); font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.historical-orders-data-table tr:hover td { background-color: rgba(248,249,250,0.6); }
+
+.status-badge-pill-ui { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; display: inline-block; }
+.state-pending-badge { background-color: rgba(251, 188, 5, 0.12); color: #b08200; }
+.state-success-badge { background-color: rgba(52, 168, 83, 0.12); color: var(--g-color-green); }
+
+.empty-table-state-fallback-notice { text-align: center; padding: 64px; color: var(--google-text-secondary-muted); display: flex; flex-direction: column; gap: 14px; align-items: center; }
+
+/* ================= AUTH OVERLAY SYSTEM FRAME MODAL CANVAS WINDOWS ================= */
+.modal-blur-curtain-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(32, 33, 36, 0.4);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); z-index: 5000;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.integrated-auth-modal-box { width: 450px; max-width: 92%; padding: 36px; position: relative; animation: authModalEntranceTriggerScaleTransform 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.btn-close-modal-window-trigger { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--google-text-secondary-muted); font-size: 1.8rem; cursor: pointer; }
+
+.auth-modal-tabs-navigation-header { display: flex; border-bottom: 1px solid var(--google-border-color-subtle); margin-bottom: 24px; }
+.auth-toggle-tab-btn { flex: 1; padding: 12px; background: none; border: none; color: var(--google-text-secondary-muted); font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: 0.2s; }
+.auth-toggle-tab-btn.active-tab-btn { color: var(--g-color-blue); box-shadow: inset 0 -2px 0 var(--g-color-blue); font-weight: 700; }
+
+.auth-form-elements-vertical-stack { display: flex; flex-direction: column; gap: 20px; }
+.auth-error-output-alert-banner { background-color: rgba(234, 67, 53, 0.08); color: var(--g-color-red); padding: 12px; border-radius: 6px; font-size: 0.84rem; text-align: center; font-weight: 500; border: 1px solid rgba(234,67,53,0.15); }
+
+.btn-execute-auth-action-submission {
+    width: 100%; padding: 14px; background-color: var(--g-color-blue); border: none; color: var(--google-white-bg);
+    font-weight: 500; border-radius: 8px; font-size: 0.95rem; cursor: pointer; margin-top: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.btn-execute-auth-action-submission:hover { background-color: #357ae8; box-shadow: var(--elevation-shadow-1); }
+
+/* ================= SLIDING INVOICE WORKSPACE SIDEBAR CANVAS DRAWER ================= */
+.right-sliding-checkout-drawer-container {
+    position: fixed; top: 0; right: -500px; width: 480px; max-width: 100%; height: 100%;
+    background-color: var(--google-white-bg); box-shadow: -4px 0 24px rgba(0,0,0,0.15); z-index: 4000;
+    padding: 36px; display: flex; flex-direction: column; gap: 28px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.right-sliding-checkout-drawer-container.drawer-open-active-state { right: 0; }
+
+.drawer-header-title-bar-node { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--google-border-color-subtle); padding-bottom: 16px; }
+.drawer-header-title-bar-node h3 { font-size: 1.2rem; font-weight: 500; }
+.btn-terminate-drawer-window-trigger { background: none; border: none; color: var(--google-text-secondary-muted); font-size: 2rem; cursor: pointer; }
+
+.drawer-scrollable-content-body-area { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 24px; padding-right: 4px; }
+
+.drawer-guest-warning-notice-box-card { background-color: rgba(251, 188, 5, 0.08); border: 1px solid rgba(251, 188, 5, 0.2); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #b08200; font-size: 0.85rem; line-height: 1.45; }
+.btn-drawer-guest-auth-shortcut-trigger { background-color: var(--g-color-yellow); border: none; padding: 10px; border-radius: 6px; font-weight: 700; color: var(--google-text-primary-dark); cursor: pointer; font-size: 0.82rem; }
+
+.invoice-itemized-summary-panel-card { background-color: var(--google-light-gray-surface); border: 1px solid var(--google-border-color-standard); padding: 20px; border-radius: 12px; }
+.invoice-row-line-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem; color: var(--google-text-secondary-muted); }
+.invoice-dashed-separator-line { border: 0; border-top: 1px dashed var(--google-border-color-standard); margin: 14px 0; }
+.grand-total-line-item { font-size: 1.3rem; font-weight: 700; color: var(--google-text-primary-dark); margin-bottom: 0; }
+.promo-badge-pill-ui { background-color: rgba(52, 168, 83, 0.12); color: var(--g-color-green); padding: 2px 10px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; }
+
+/* ================= COMMERCIAL GIANT NATIVE GOOGLE STYLED UPI GATEWAY INTERFACE ================= */
+.native-upi-payment-gateway-hub-wrapper {
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.native-upi-payment-gateway-hub-wrapper h4 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--google-text-primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Visual QR Scanning Frame Matrix configurations layout maps */
+.upi-payment-qr-code-display-visual-frame-box {
+    background-color: var(--google-light-gray-surface);
+    border: 1px solid var(--google-border-color-subtle);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.qr-code-placeholder-wrapper-graphic {
+    background-color: var(--google-white-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--google-border-color-standard);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Laser scan simulation indicator line asset modules graphics */
+.qr-animated-scanner-laser-line-element {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--g-color-blue);
+    box-shadow: 0 0 8px var(--g-color-blue);
+    animation: upiQrLaserScanLoopLineMotion 2.2s linear infinite;
+}
+
+.qr-scanning-caption-text-directive {
+    font-size: 0.78rem;
+    color: var(--google-text-secondary-muted);
+    line-height: 1.4;
+    max-width: 280px;
+}
+
+.upi-visual-or-separator-line-element {
+    text-align: center;
+    border-bottom: 1px solid var(--google-border-color-subtle);
+    line-height: 0.1em;
+    margin: 10px 0;
+}
+.upi-visual-or-separator-line-element span {
+    background: var(--google-white-bg);
+    padding: 0 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--google-text-tertiary-light);
+    letter-spacing: 0.5px;
+}
+
+/* Clickable direct intent module link layouts boxes entries */
+.interactive-upi-intent-action-module-row-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.interactive-upi-intent-action-module-row-card:hover {
+    border-color: var(--g-color-blue);
+    background-color: rgba(66, 133, 244, 0.02);
+    box-shadow: 0 2px 6px rgba(66,133,244,0.08);
+}
+
+.intent-icon-left-side-frame-badge {
+    width: 44px; height: 44px; border-radius: 50%; background-color: var(--google-light-gray-surface);
+    display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;
+}
+
+.intent-meta-text-directives-block h5 { font-size: 0.9rem; font-weight: 500; color: var(--google-text-primary-dark); margin-bottom: 2px; }
+.intent-meta-text-directives-block p { font-size: 0.78rem; color: var(--google-text-secondary-muted); line-height: 1.3; }
+
+/* Prefilled Typing Terminal Box View frameworks rules blocks sets variables properties */
+.upi-prefilled-terminal-typing-view-box {
+    background-color: #f1f3f4;
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 8px;
+    padding: 16px;
+    animation: applicationFrameEntranceFadeTransition 0.25s ease-out;
+}
+.terminal-header-title { font-size: 0.78rem; font-weight: 700; color: var(--google-text-secondary-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+
+.prefilled-input-wrapper-box-element {
+    display: flex; align-items: center; background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard); border-radius: 6px; overflow: hidden;
+}
+.currency-symbol-tag { padding: 0 12px; font-weight: 700; color: var(--google-text-primary-dark); background-color: var(--google-light-gray-surface); height: 44px; display: flex; align-items: center; border-right: 1px solid var(--google-border-color-standard); }
+.prefilled-input-wrapper-box-element input { border: none !important; box-shadow: none !important; height: 44px; padding: 0 12px; font-weight: 700; font-size: 1.1rem; color: var(--google-text-primary-dark); background-color: var(--google-white-bg); flex-grow: 1; }
+.lock-status-indicator-badge { padding: 0 12px; font-size: 0.75rem; font-weight: 500; color: var(--google-text-secondary-muted); display: flex; align-items: center; gap: 4px; background-color: rgba(52, 168, 83, 0.05); height: 44px; border-left: 1px solid var(--google-border-color-standard); white-space: nowrap; }
+
+.btn-drawer-payment-execution-submit-gate {
+    width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.btn-drawer-payment-execution-submit-gate.free-promo-variant { background-color: var(--g-color-green); color: var(--google-white-bg); }
+.btn-drawer-payment-execution-submit-gate.free-promo-variant:hover { background-color: #2d9449; }
+.btn-drawer-payment-execution-submit-gate.commercial-paid-variant { background-color: var(--google-text-primary-dark); color: var(--google-white-bg); }
+.btn-drawer-payment-execution-submit-gate.commercial-paid-variant:hover { background-color: #3c4043; }
+
+/* Backdrop Veil Curtain properties tags layers controls layout */
+.global-layout-underlying-backdrop-curtain-veil { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); z-index: 3900; display: none; }
+.hidden { display: none !important; }
+
+/* STICKY FLOATING HORIZONTAL CONSOLE DISPATCH ACTIONS MODALS FOULS BOOTSTRAPS PANELS */
+.sticky-floating-horizontal-action-footer-prompt-bar {
+    position: fixed; bottom: 0; left: 0; width: 100%; padding: 18px 24px; background-color: var(--google-white-bg);
+    border-top: 1px solid var(--google-border-color-standard); box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+    z-index: 900; animation: upiQrLaserScanLoopLineMotion 0.3s ease;
+}
+.footer-prompt-max-constrain { width: 100%; max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.footer-prompt-meta-info-text-tag { font-size: 0.88rem; font-weight: 500; color: var(--google-text-secondary-muted); display: flex; align-items: center; gap: 8px; }
+.btn-trigger-drawer-canvas-open-action {
+    background-color: var(--g-color-blue); color: var(--google-white-bg); border: none; padding: 14px 32px;
+    border-radius: 8px; font-weight: 500; font-size: 0.92rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background-color 0.2s;
+}
+.btn-trigger-drawer-canvas-open-action:hover { background-color: #357ae8; }
+
+/* ================= COMMERCIAL GLOBAL RE-DESIGNED BRAND CORPORATE FOOTER ================= */
+.google-enterprise-footer-section {
+    background-color: var(--google-light-gray-surface);
+    border-top: 1px solid var(--google-border-color-subtle);
+    padding: 56px 24px;
+    margin-top: 64px;
+}
+
+.footer-max-constrain-layout {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* Alignment rules strictly isolating NatNex at Left Side layout node */
+.footer-identity-branding-far-left-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 320px;
+}
+
+.footer-natnex-corporate-logo-moniker {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--google-text-primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.corporate-icon-dot-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--g-color-green);
+    display: inline-block;
+}
+
+.corporate-copyright-meta-string {
+    font-size: 0.78rem;
+    color: var(--google-text-tertiary-light);
+    line-height: 1.45;
+}
+
+/* Grid columns spanning extensively right beside the branding block */
+.footer-communication-coordinates-spanning-grid-system {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 36px;
+    border-top: 1px solid var(--google-border-color-standard);
+    padding-top: 40px;
+}
+
+.coordinates-column-node {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.coordinates-column-node h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--google-text-secondary-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.hyperlink-coordinate-row,
+.static-coordinate-text-line {
+    font-size: 0.88rem;
+    color: var(--google-text-secondary-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hyperlink-coordinate-row a {
+    color: var(--google-text-secondary-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.hyperlink-coordinate-row a:hover {
+    color: var(--g-color-blue);
+    text-decoration: underline;
+}
+
+/* Informational Shared Blocks configurations structural modifiers tags layouts components */
+.global-section-break-line { border: 0; height: 1px; background-color: var(--google-border-color-subtle); margin: 56px 0; }
+.static-informational-block-card { padding: 32px; margin-bottom: 24px; background: var(--google-white-bg); }
+.info-block-header { font-size: 1.25rem; font-weight: 400; color: var(--google-text-primary-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.static-informational-block-card p { font-size: 0.95rem; color: var(--google-text-secondary-muted); line-height: 1.6; }
+.capability-matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px; }
+.capability-item-node { background-color: var(--google-light-gray-surface); padding: 24px; border-radius: 12px; border: 1px solid var(--google-border-color-subtle); }
+.capability-item-node i { font-size: 1.4rem; margin-bottom: 12px; display: inline-block; }
+.capability-item-node h4 { font-size: 1.05rem; font-weight: 500; margin-bottom: 6px; }
+.capability-item-node p { font-size: 0.85rem; line-height: 1.45; }
+.pipeline-flow-flex-container { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+.pipeline-step-node { flex: 1; min-width: 240px; background-color: var(--google-light-gray-surface); padding: 24px; border-radius: 12px; position: relative; border: 1px solid var(--google-border-color-subtle); }
+.step-index-circle { position: absolute; top: -12px; left: 20px; background-color: var(--google-text-primary-dark); color: var(--google-white-bg); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.78rem; }
+.pipeline-step-node h4 { margin-bottom: 6px; font-size: 1rem; font-weight: 500; margin-top: 4px; }
+.pipeline-step-node p { font-size: 0.85rem; }
+.faq-accordion-item-box { background-color: var(--google-light-gray-surface); padding: 18px; border-radius: 8px; margin-bottom: 14px; border-left: 4px solid var(--g-color-yellow); }
+.faq-accordion-item-box p { margin-top: 6px; font-size: 0.88rem; }
+
+/* Structural CSS Keyframes Triggers Animations Core Engines definitions blocks loops vectors */
+@keyframes coreSystemGlowBorderSpinRotation {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes applicationFrameEntranceFadeTransition {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes authModalEntranceTriggerScaleTransform {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes upiQrLaserScanLoopLineMotion {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+
+/* Responsive Media Breakdown Adapters rules overrides bounds context panels viewports */
+@media (max-width: 992px) {
+    .central-navigation-links { display: none !important; }
+    .central-navigation-links.session-dependent-link { display: flex !important; }
+    .right-sliding-checkout-drawer-container { width: 100%; right: -100%; }
+    .footer-max-constrain-layout { gap: 32px; }
+    .footer-communication-coordinates-spanning-grid-system { grid-template-columns: 1fr; gap: 24px; }
+}

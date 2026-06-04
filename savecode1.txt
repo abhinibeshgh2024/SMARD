@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smar Portal - Next-Gen Smart Cards Matrix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="enterprise-engine-body">
+
+    <header class="google-navigation-bar">
+        <div class="header-max-constrain">
+            
+            <div class="smar-logo-container" onclick="navigateToWorkspaceView('portal')">
+                <span class="g-blue">S</span><span class="g-red">m</span><span class="g-yellow">a</span><span class="g-green">r</span>
+            </div>
+
+            <nav class="central-navigation-links">
+                <a href="#" class="nav-anchor active-anchor" id="lnk-portal" onclick="navigateToWorkspaceView('portal')">Home Portal</a>
+                <a href="#" class="nav-anchor session-dependent-link hidden" id="lnk-dashboard" onclick="navigateToWorkspaceView('dashboard')">Client Dashboard</a>
+                <a href="#section-about" class="nav-anchor structural-page-link">About Identity</a>
+                <a href="#section-features" class="nav-anchor structural-page-link">Core Features</a>
+                <a href="#section-workflow" class="nav-anchor structural-page-link">System Operations</a>
+                <a href="#section-faqs" class="nav-anchor structural-page-link">FAQs Desk</a>
+            </nav>
+
+            <div class="header-session-action-zone" id="auth-header-state-mount">
+                </div>
+
+        </div>
+    </header>
+
+    <main class="primary-application-viewport">
+        <div class="workspace-max-constrain">
+
+            <div id="workspace-view-portal" class="application-view-frame active-frame">
+                
+                <div class="intent-segment-selector-wrapper">
+                    <button class="segment-tab-trigger active-trigger" onclick="switchActiveServiceSegment('individual')">Individual Corporate Suite</button>
+                    <button class="segment-tab-trigger" onclick="switchActiveServiceSegment('commercial')">Enterprise B2B Bulk Integration</button>
+                </div>
+
+                <div id="panel-segment-individual" class="service-segment-panel active-panel">
+                    
+                    <div class="portal-marketing-intro-hero">
+                        <h1>Select Your Enterprise Smart Profile Blueprint</h1>
+                        <p>Launch your absolute global footprint. Your first card order is provisioned at <strong>₹0 Absolute Transaction Fee</strong>, regardless of the template blueprint variant selected.</p>
+                    </div>
+
+                    <div class="smart-blueprints-showcase-grid">
+                        
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-1">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b1-gradient-front">Obsidian Matte</div>
+                                <div class="card-face back-face b1-gradient-back">QR Secure Matrix</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Classic Obsidian</h3>
+                                <p>Sleek deep slate aesthetic tailored perfectly for technology architects and security professionals.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(1, 'Classic Obsidian')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-2">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b2-gradient-front">Platinum Executive</div>
+                                <div class="card-face back-face b2-gradient-back">Secure Layer Core</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Minimal Platinum</h3>
+                                <p>Clean silver brushed finish layouts emphasizing minimal typography matching executive nodes profiles.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(2, 'Minimal Platinum')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-3">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b3-gradient-front">Aurora Horizon</div>
+                                <div class="card-face back-face b3-gradient-back">Mesh Identity Link</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Aurora Paradigm</h3>
+                                <p>Vibrant energy shifting cyber gradients designed specifically for creator networks and modern founders.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(3, 'Aurora Paradigm')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-4">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b4-gradient-front">Luxe Rose Gold</div>
+                                <div class="card-face back-face b4-gradient-back">Premium Vector Module</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Rose Gold Luxury</h3>
+                                <p>Sophisticated warm metal tones crafted meticulously for global design agencies and brand consultants.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(4, 'Rose Gold Luxury')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                        <div class="google-animated-card-module blueprint-box" id="card-blueprint-5">
+                            <div class="blueprint-vector-preview-box">
+                                <div class="card-face front-face b5-gradient-front">Matrix Algorithmic</div>
+                                <div class="card-face back-face b5-gradient-back">Vector Data String</div>
+                            </div>
+                            <div class="blueprint-meta-details-box">
+                                <h3>Matrix Crypto Cyber</h3>
+                                <p>High contrast dark terminal neon green aesthetics for cryptography developers and hardware engineers.</p>
+                                <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(5, 'Matrix Crypto Cyber')">Choose Blueprint</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="google-animated-card-module dynamic-configuration-terminal-form hidden" id="card-customization-form-section">
+                        <div class="form-title-bar-node">
+                            <i class="fa-solid fa-sliders g-blue-text"></i>
+                            <h2>Configure Profile Parameters: <span id="lbl-active-configured-blueprint-title">None Selected</span></h2>
+                        </div>
+                        
+                        <div class="form-inputs-layout-grid">
+                            <div class="form-input-element-group">
+                                <label for="field-print-name">Full Professional Name String</label>
+                                <input type="text" id="field-print-name" placeholder="Name to be permanently printed on surface layout">
+                            </div>
+                            <div class="form-input-element-group">
+                                <label for="field-print-designation">Designation / Corporate Mandate</label>
+                                <input type="text" id="field-print-designation" placeholder="e.g. Principal Infrastructure Engineer">
+                            </div>
+                            <div class="form-input-element-group">
+                                <label for="field-print-image">Display Profile Digital Image Asset</label>
+                                <input type="file" id="field-print-image" accept="image/*">
+                            </div>
+                            <div class="form-input-element-group">
+                                <label for="field-infrastructure-module">Wireless Transmission Layer Hardware</label>
+                                <select id="field-infrastructure-module" onchange="evaluateHardwareInfrastructureRequirements(this)">
+                                    <option value="qr-static">Dynamic QR Code High Definition Vector</option>
+                                    <option value="nfc-wireless">NFC Integrated Semiconductor Protocol Module (Unavailable)</option>
+                                </select>
+                            </div>
+                            <div class="form-input-element-group span-full-width-column">
+                                <label for="field-contact-toggle">Append Contact Metadata Attributes Subform?</label>
+                                <select id="field-contact-toggle" onchange="toggleConditionalMetadataFields(this.value)">
+                                    <option value="disable">Keep Layout Minimal (No Extended Contact Data)</option>
+                                    <option value="enable">Inject Hyperlinked Extended Contact Coordinates</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="sub-form-conditional-contact-coordinates" class="conditional-sub-form-block hidden">
+                            <div class="form-inputs-layout-grid">
+                                <div class="form-input-element-group">
+                                    <label for="field-contact-phone">Active Voice Mobile Number</label>
+                                    <input type="tel" id="field-contact-phone" placeholder="+91 XXXXX XXXXX">
+                                </div>
+                                <div class="form-input-element-group">
+                                    <label for="field-contact-email">Corporate Public Email Destination</label>
+                                    <input type="email" id="field-contact-email" placeholder="identity@smar.domain">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="panel-segment-commercial" class="service-segment-panel">
+                    <div class="google-animated-card-module commercial-b2b-hero-card">
+                        <i class="fa-solid fa-building-circle-check fa-4x g-blue-text"></i>
+                        <h2>Scaled Enterprise Integrations & Fleet Provisioning</h2>
+                        <p>Provision thousands of synced profiles mapping directly to single source corporate authorization indices. Deploy centralized administrative access dashboard dashboards for immediate real-time corporate validation tracking data layers.</p>
+                        <button class="btn-b2b-corporate-consultation" onclick="alert('Corporate Consultation request cataloged. Our system architects panel will engage inside 24 hours.')">Contact B2B Architecture Desk</button>
+                    </div>
+                </div>
+
+                <hr class="global-section-break-line">
+
+                <section id="section-about" class="google-animated-card-module static-informational-block-card">
+                    <div class="info-block-header"><i class="fa-solid fa-circle-nodes g-blue-text"></i> About Smar Distributed Infrastructure</div>
+                    <p>Smar platforms integrate high-fidelity physical micro-profile templates with digital real-time interactive routing hubs. Powered by underlying enterprise architectural layouts, we map secure print identifiers safely to clean user-managed profile endpoints instantly, changing standard corporate interaction vectors into digital modern solutions.</p>
+                </section>
+
+                <section id="section-features" class="google-animated-card-module static-informational-block-card">
+                    <div class="info-block-header"><i class="fa-solid fa-shield-halved g-green-text"></i> Platform Capability Matrix</div>
+                    <div class="capability-matrix-grid">
+                        <div class="capability-item-node"><i class="fa-solid fa-qrcode g-blue-text"></i><h4>Dynamic Mapping Core</h4><p>Instantly update the target pointer routing destinations anytime from your control panel without changing the printed physical asset asset.</p></div>
+                        <div class="capability-item-node"><i class="fa-solid fa-chart-line g-red-text"></i><h4>Engagement Real-Time Logs</h4><p>Track unique interactions and analytical metrics across multiple distributed geo-locations with clean tracking visibility pipelines.</p></div>
+                        <div class="capability-item-node"><i class="fa-solid fa-fingerprint g-yellow-text"></i><h4>Identity Verification Protocol</h4><p>Enforce cryptographically validated signature parameters safeguarding personal operational contact files maps records strings.</p></div>
+                    </div>
+                </section>
+
+                <section id="section-workflow" class="google-animated-card-module static-informational-block-card">
+                    <div class="info-block-header"><i class="fa-solid fa-bezier-curve g-red-text"></i> Architectural Lifecycle Pipeline</div>
+                    <div class="pipeline-flow-flex-container">
+                        <div class="pipeline-step-node"><div class="step-index-circle">1</div><h4>Select Visual Canvas</h4><p>Choose the base substrate graphic blueprint template matching your brand identity system lines.</p></div>
+                        <div class="pipeline-step-node"><div class="step-index-circle">2</div><h4>Inject Parameters</h4><p>Configure personal metadata configurations attributes forms strings nodes assets variables securely.</p></div>
+                        <div class="pipeline-step-node"><div class="step-index-circle">3</div><h4>Initialize Zero-Fee Node</h4><p>Submit your first promotional order validation checkout mapping pipeline at zero commercial costs due balance.</p></div>
+                    </div>
+                </section>
+
+                <section id="section-faqs" class="google-animated-card-module static-informational-block-card">
+                    <div class="info-block-header"><i class="fa-solid fa-circle-question g-yellow-text"></i> Frequently Answered Technical Operations Questions</div>
+                    <div class="faq-accordion-item-box"><strong>Is the initial promotional smart profile tracking unit completely free?</strong><p>Yes. The platform enforces an absolute zero cost calculation metric on the very first transaction ledger generated by a newly registered account node, across all card styles variants choices.</p></div>
+                    <div class="faq-accordion-item-box"><strong>When will wireless near-field semiconductor features deploy?</strong><p>NFC transmission layer parameters are currently running verification benchmarks within simulated sandboxes. The dynamic static QR structural frame framework is fully operational globally.</p></div>
+                </section>
+
+            </div>
+
+
+            <div id="workspace-view-dashboard" class="application-view-frame">
+                
+                <div class="dashboard-user-hero-header-block">
+                    <h2>Enterprise Node Operations Console: <span id="lbl-dashboard-welcome-user-name">Client Core</span></h2>
+                    <p>Track system performance metrics, modify active routing coordinates, and trace historically generated print ledger configurations.</p>
+                </div>
+
+                <div class="dashboard-analytics-counters-grid">
+                    <div class="google-animated-card-module metric-counter-item-card">
+                        <span class="metric-label-text">Total Provisioned Profiles Logs</span>
+                        <span class="metric-numerical-value-text" id="cnt-metric-total-orders">0</span>
+                    </div>
+                    <div class="google-animated-card-module metric-counter-item-card">
+                        <span class="metric-label-text">Zero-Fee Promotion Status</span>
+                        <span class="metric-numerical-value-text g-green-text" id="cnt-metric-promo-status">Available</span>
+                    </div>
+                    <div class="google-animated-card-module metric-counter-item-card">
+                        <span class="metric-label-text">Node Operational Verification Level</span>
+                        <span class="metric-numerical-value-text g-blue-text" id="cnt-metric-account-tier">Standard Enterprise</span>
+                    </div>
+                </div>
+
+                <div class="google-animated-card-module table-ledger-container-card">
+                    <div class="table-header-title-caption-bar">
+                        <h3>Smart Profile Historical Order Ledger Streams</h3>
+                    </div>
+                    <div class="responsive-table-overflow-axis-wrapper">
+                        <table class="historical-orders-data-table">
+                            <thead>
+                                <tr>
+                                    <th>System Order UUID Token</th>
+                                    <th>Timestamp Generated</th>
+                                    <th>Substrate Variant Blueprint</th>
+                                    <th>Printed Moniker Attribution</th>
+                                    <th>Quantity Nodes</th>
+                                    <th>Invoiced Financial Settlement</th>
+                                    <th>Operational Pipeline State Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mount-target-table-rows-ledger">
+                                </tbody>
+                        </table>
+                    </div>
+                    <div id="placeholder-empty-table-state-notice" class="empty-table-state-fallback-notice">
+                        <i class="fa-solid fa-cubes-stacked fa-3x"></i>
+                        <p>No active smart profiles have been initialized within this profile node context yet. Return to the Home Portal to deploy your first blueprint design template file map.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <div class="modal-blur-curtain-overlay hidden" id="modal-screen-auth-backdrop">
+        <div class="google-animated-card-module integrated-auth-modal-box">
+            <button class="btn-close-modal-window-trigger" onclick="toggleAuthModalWindowDisplayState(false)">&times;</button>
+            
+            <div class="auth-modal-tabs-navigation-header">
+                <button class="auth-toggle-tab-btn active-tab-btn" id="btn-auth-tab-login" onclick="switchActiveAuthFormContextMode('login')">Sign In</button>
+                <button class="auth-toggle-tab-btn" id="btn-auth-tab-register" onclick="switchActiveAuthFormContextMode('register')">Register Identity</button>
+            </div>
+
+            <div class="auth-form-elements-vertical-stack">
+                <div class="form-input-element-group" id="container-field-auth-fullname">
+                    <label for="field-auth-fullname">Account User Full Name Moniker</label>
+                    <input type="text" id="field-auth-fullname" placeholder="e.g. Johnathan Doe">
+                </div>
+                <div class="form-input-element-group">
+                    <label for="field-auth-email">Linked Email Coordinate Identity</label>
+                    <input type="email" id="field-auth-email" placeholder="user@domain.identity">
+                </div>
+                <div class="form-input-element-group">
+                    <label for="field-auth-password">Security Validation Key Phrase Token</label>
+                    <input type="password" id="field-auth-password" placeholder="••••••••••••">
+                </div>
+
+                <div class="auth-error-output-alert-banner hidden" id="banner-auth-error-feedback-logs">Authentication token mapping failure logs stack.</div>
+
+                <button class="btn-execute-auth-action-submission" id="btn-trigger-auth-execution-engine" onclick="processClientAuthFormSubmission()">Process Security Verification Handshake</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-sidebar-canvas-drawer" class="right-sliding-checkout-drawer-container">
+        <div class="drawer-header-title-bar-node">
+            <h3>Configure Quantity & Financial Settlement</h3>
+            <button class="btn-terminate-drawer-window-trigger" onclick="toggleCheckoutDrawerCanvasDisplayState(false)">&times;</button>
+        </div>
+        
+        <div class="drawer-scrollable-content-body-area">
+            
+            <div id="banner-drawer-guest-verification-warning" class="drawer-guest-warning-notice-box-card">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p><strong>Identity Token Missing:</strong> You are currently configuring parameters under guest constraints. Authenticate or establish a permanent account profile node to authorize secure print operations and track logs history safely.</p>
+                <button class="btn-drawer-guest-auth-shortcut-trigger" onclick="toggleCheckoutDrawerCanvasDisplayState(false); toggleAuthModalWindowDisplayState(true, 'login');">Sign In / Register Portal Now</button>
+            </div>
+
+            <div class="form-input-element-group">
+                <label for="field-drawer-quantity-counter">Required Production Units Volume Count</label>
+                <input type="number" id="field-drawer-quantity-counter" value="1" min="1" oninput="executePricingMatrixCalculationsEngine()">
+            </div>
+
+            <div class="invoice-itemized-summary-panel-card">
+                <div class="invoice-row-line-item"><span>Selected Substrate Design Blueprint:</span> <span id="lbl-summary-blueprint-name-target">None Selected</span></div>
+                <div class="invoice-row-line-item"><span>Platform Allocation Rules Engine Status:</span> <span id="lbl-summary-pricing-tier-badge-target" class="promo-badge-pill-ui">Evaluating parameters...</span></div>
+                <hr class="invoice-dashed-separator-line">
+                <div class="invoice-row-line-item grand-total-line-item"><span>Total Net Invoice Outstanding Due Balance:</span> <span id="lbl-summary-invoice-grand-total-value-target">₹0</span></div>
+            </div>
+
+            <div id="container-native-upi-gateway-hub" class="native-upi-payment-gateway-hub-wrapper hidden">
+                <h4>Native UPI Payment Processing Network via Smar Security Matrix Shell</h4>
+                
+                <div class="upi-payment-qr-code-display-visual-frame-box">
+                    <div class="qr-code-placeholder-wrapper-graphic">
+                        <i class="fa-solid fa-qrcode fa-5x text-[#202124]"></i>
+                        <div class="qr-animated-scanner-laser-line-element"></div>
+                    </div>
+                    <p class="qr-scanning-caption-text-directive"><i class="fa-solid fa-camera-retro g-blue-text"></i> Scan compiled dynamic secure string directly with any authenticated UPI app layer to clear invoiced due balances instantly.</p>
+                </div>
+
+                <div class="upi-visual-or-separator-line-element"><span>OR PAY VIA DIRECT INTENT HANDSHAKE</span></div>
+
+                <div class="interactive-upi-intent-action-module-row-card" onclick="triggerClickableUpiIntentHandshakeProcessingView()">
+                    <div class="intent-icon-left-side-frame-badge"><i class="fa-solid fa-mobile-screen-button g-green-text"></i></div>
+                    <div class="intent-meta-text-directives-block">
+                        <h5>Execute Direct UPI Instant Processing Handshake</h5>
+                        <p>Click here to trigger immediate background payment intent layer with pre-filled locked auto calculation value text parameter token.</p>
+                    </div>
+                </div>
+
+                <div id="box-upi-intent-prefilled-typing-terminal-view" class="upi-prefilled-terminal-typing-view-box hidden">
+                    <div class="terminal-header-title">UPI Processing Handshake Window Connected</div>
+                    <div class="form-input-element-group">
+                        <label>Pre-written Prescribed Payable Balance Amount (System Auto-Locked)</label>
+                        <div class="prefilled-input-wrapper-box-element">
+                            <span class="currency-symbol-tag">₹</span>
+                            <input type="text" id="field-upi-locked-prescribed-amount-display" readonly value="0">
+                            <span class="lock-status-indicator-badge"><i class="fa-solid fa-lock g-green-text"></i> Amount Verified</span>
+                        </div>
+                    </div>
+                    <p class="terminal-processing-subtext-note">Platform structural integrity verified. Proceed below to sign cryptographic transaction strings tokens data blocks logs.</p>
+                </div>
+
+            </div>
+
+            <div id="container-drawer-checkout-actions-mount-zone">
+                </div>
+
+        </div>
+    </div>
+
+    <div id="backdrop-veil-checkout-drawer-curtain" class="global-layout-underlying-backdrop-curtain-veil" onclick="toggleCheckoutDrawerCanvasDisplayState(false)"></div>
+
+    <div class="sticky-floating-horizontal-action-footer-prompt-bar hidden" id="footer-action-proceed-bar-prompt">
+        <div class="footer-prompt-max-constrain">
+            <p class="footer-prompt-meta-info-text-tag"><i class="fa-solid fa-circle-check g-green-text"></i> Configuration blue-print parameters mapped successfully. Ready to compile final allocation logs.</p>
+            <button class="btn-trigger-drawer-canvas-open-action" onclick="toggleCheckoutDrawerCanvasDisplayState(true)">Proceed to Invoice & Checkout Verification <i class="fa-solid fa-arrow-right-long"></i></button>
+        </div>
+    </div>
+
+    <footer class="google-enterprise-footer-section">
+        <div class="footer-max-constrain-layout">
+            
+            <div class="footer-identity-branding-far-left-block">
+                <div class="footer-natnex-corporate-logo-moniker select-none">
+                    <span class="corporate-icon-dot-indicator"></span>
+                    NatNex
+                </div>
+                <p class="corporate-copyright-meta-string">&copy; 2026 NatNex Technologies. All infrastructure operations registered.</p>
+            </div>
+
+            <div class="footer-communication-coordinates-spanning-grid-system">
+                
+                <div class="coordinates-column-node">
+                    <h4>Direct Communications</h4>
+                    <p class="hyperlink-coordinate-row"><i class="fa-solid fa-envelope g-blue-text"></i> <a href="mailto:operations@natnex.tech">operations@natnex.tech</a></p>
+                    <p class="hyperlink-coordinate-row"><i class="fa-solid fa-phone g-green-text"></i> <a href="tel:+918005553921">+91 (800) 555-3921</a></p>
+                </div>
+
+                <div class="coordinates-column-node">
+                    <h4>Global HQ Coordinates</h4>
+                    <p class="static-coordinate-text-line"><i class="fa-solid fa-building g-red-text"></i> Executive Innovation Square</p>
+                    <p class="static-coordinate-text-line"><i class="fa-solid fa-map-location-dot g-yellow-text"></i> Visakhapatnam, Andhra Pradesh, India</p>
+                </div>
+
+                <div class="coordinates-column-node">
+                    <h4>Operational Support Desks</h4>
+                    <p class="hyperlink-coordinate-row"><i class="fa-solid fa-headset g-blue-text"></i> <a href="#">Developer Core Documentation</a></p>
+                    <p class="hyperlink-coordinate-row"><i class="fa-solid fa-server g-yellow-text"></i> <a href="#">Distributed Sandbox Matrix status</a></p>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* ================= GLOBAL DESIGN SYSTEM FRAMEWORK VARIABLES & TOKENS ================= */
+:root {
+    --google-white-bg: #ffffff;
+    --google-light-gray-surface: #f8f9fa;
+    --google-border-color-standard: #dadce0;
+    --google-border-color-subtle: #f1f3f4;
+    --google-text-primary-dark: #202124;
+    --google-text-secondary-muted: #5f6368;
+    --google-text-tertiary-light: #70757a;
+    
+    /* Signature Brand Colors Hex Map Definitions */
+    --g-color-blue: #4285F4;
+    --g-color-red: #EA4335;
+    --g-color-yellow: #FBBC05;
+    --g-color-green: #34A853;
+    
+    /* Native Shadows Elevation Coefficients tokens */
+    --elevation-shadow-1: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+    --elevation-shadow-2: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+    --elevation-shadow-3: 0 4px 6px 0 rgba(60,64,67,0.3), 0 8px 24px 6px rgba(60,64,67,0.15);
+}
+
+/* Base Document Reset Layer Configurations Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body.enterprise-engine-body {
+    background-color: var(--google-white-bg);
+    color: var(--google-text-primary-dark);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Color Palette Utility Text Classes */
+.g-blue-text { color: var(--g-color-blue); }
+.g-red-text { color: var(--g-color-red); }
+.g-yellow-text { color: var(--g-color-yellow); }
+.g-green-text { color: var(--g-color-green); }
+
+/* ================= EXCLUSIVE GOOGLE BRAND STYLED TOP HEADER BAR NAVIGATION ================= */
+.google-navigation-bar {
+    background-color: var(--google-white-bg);
+    border-bottom: 1px solid var(--google-border-color-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+}
+
+.header-max-constrain {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.smar-logo-container {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.smar-logo-container span {
+    display: inline-block;
+}
+
+.smar-logo-container .g-blue { color: var(--g-color-blue); }
+.smar-logo-container .g-red { color: var(--g-color-red); }
+.smar-logo-container .g-yellow { color: var(--g-color-yellow); }
+.smar-logo-container .g-green { color: var(--g-color-green); }
+
+.central-navigation-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-anchor {
+    text-decoration: none;
+    color: var(--google-text-secondary-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.nav-anchor:hover {
+    color: var(--google-text-primary-dark);
+    background-color: var(--google-light-gray-surface);
+}
+
+.nav-anchor.active-anchor {
+    color: var(--g-color-blue);
+    background-color: rgba(66, 133, 244, 0.06);
+    border: 1px solid rgba(66, 133, 244, 0.15);
+}
+
+/* User Account Profile Badging & Sign In Buttons Structures Layouts */
+.header-session-action-zone {
+    display: flex;
+    align-items: center;
+}
+
+.btn-header-login-trigger-action {
+    background-color: var(--g-color-blue);
+    color: var(--google-white-bg);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-header-login-trigger-action:hover {
+    background-color: #357ae8;
+    box-shadow: var(--elevation-shadow-1);
+}
+
+.user-profile-session-badge-node {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--google-light-gray-surface);
+    border: 1px solid var(--google-border-color-standard);
+    padding: 6px 16px;
+    border-radius: 30px;
+}
+
+.user-profile-session-badge-node span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--google-text-primary-dark);
+}
+
+.btn-session-logout-directive-link {
+    background: none;
+    border: none;
+    color: var(--g-color-red);
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    transition: transform 0.2s;
+}
+
+.btn-session-logout-directive-link:hover {
+    transform: scale(1.15);
+}
+
+/* ================= CENTRAL CONTAINER CORE AND WORKSPACE SCHEMATICS ================= */
+.primary-application-viewport {
+    flex-grow: 1;
+    width: 100%;
+    padding: 40px 24px;
+    background-color: var(--google-white-bg);
+}
+
+.workspace-max-constrain {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Dynamic Content Frame Controllers Display Blocks Rules */
+.application-view-frame {
+    display: none;
+}
+
+.application-view-frame.active-frame {
+    display: block;
+    animation: applicationFrameEntranceFadeTransition 0.4s ease-out forwards;
+}
+
+/* Intent Tab Segment Switchers Design Components Layouts */
+.intent-segment-selector-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+}
+
+.segment-tab-trigger {
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    color: var(--google-text-secondary-muted);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.segment-tab-trigger:hover {
+    background-color: var(--google-light-gray-surface);
+    color: var(--google-text-primary-dark);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.segment-tab-trigger.active-trigger {
+    border-color: transparent;
+    background-color: var(--google-text-primary-dark);
+    color: var(--google-white-bg);
+    box-shadow: var(--elevation-shadow-1);
+}
+
+.service-segment-panel { display: none; }
+.service-segment-panel.active-panel { display: block; }
+
+.portal-marketing-intro-hero {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 40px auto;
+}
+
+.portal-marketing-intro-hero h1 {
+    font-size: 2.25rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    color: var(--google-text-primary-dark);
+}
+
+.portal-marketing-intro-hero p {
+    font-size: 1.05rem;
+    color: var(--google-text-secondary-muted);
+    line-height: 1.5;
+}
+
+.portal-marketing-intro-hero strong {
+    color: var(--g-color-green);
+    font-weight: 500;
+}
+
+/* ================= COMPLETE CORE GOOGLE ANIMATED ROLLING BORDER MECHANICS ================= */
+.google-animated-card-module {
+    position: relative;
+    background: var(--google-white-bg);
+    border-radius: 16px;
+    border: 1px solid var(--google-border-color-standard);
+    z-index: 1;
+    overflow: hidden;
+    transition: box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+/* Material Shadow Triggers Elevate Bounds States */
+.google-animated-card-module:hover {
+    border-color: transparent;
+    box-shadow: var(--elevation-shadow-2);
+}
+
+/* The underlying scrolling colorful conic track mapping background layer */
+.google-animated-card-module::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        var(--g-color-blue) 0deg,
+        var(--g-color-red) 90deg,
+        var(--g-color-yellow) 180deg,
+        var(--g-color-green) 270deg,
+        var(--g-color-blue) 360deg
+    );
+    animation: coreSystemGlowBorderSpinRotation 3.5s linear infinite;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* The structural central white overlay masking component to secure border density look */
+.google-animated-card-module::after {
+    content: '';
+    position: absolute;
+    inset: 3px; /* Determines the thin crisp 3px rolling border width line */
+    background: var(--google-white-bg);
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* Synchronized revelation loops mappings across hover paths */
+.google-animated-card-module:hover::before,
+.google-animated-card-module:hover::after {
+    opacity: 1;
+}
+
+/* ================= SMART BLUEPRINTS LAYOUTS GRID BLOCKS STRUCTURES ================= */
+.smart-blueprints-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+    margin-bottom: 56px;
+}
+
+.blueprint-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blueprint-box.selected-active-blueprint {
+    border-color: var(--g-color-blue) !important;
+    background-color: rgba(66, 133, 244, 0.01);
+}
+
+.blueprint-vector-preview-box {
+    padding: 24px;
+    background-color: var(--google-light-gray-surface);
+    border-bottom: 1px solid var(--google-border-color-subtle);
+    display: flex;
+    gap: 12px;
+}
+
+.card-face {
+    flex: 1;
+    height: 130px;
+    border-radius: 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.15);
+    color: var(--google-white-bg);
+}
+
+/* Layout Color Schemes Variables Mapping Presets Visual Graphics elements grids layers */
+.b1-gradient-front { background: linear-gradient(135deg, #2c3e50, #0f172a); border-left: 4px solid var(--g-color-blue); }
+.b1-gradient-back { background: #1e293b; color: rgba(255,255,255,0.6); }
+.b2-gradient-front { background: linear-gradient(135deg, #e2e8f0, #cbd5e1); color: #334155; box-shadow: inset 0 0 20px rgba(0,0,0,0.05); border-left: 4px solid var(--google-text-secondary-muted); }
+.b2-gradient-back { background: #f1f5f9; color: #64748b; }
+.b3-gradient-front { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+.b3-gradient-back { background: linear-gradient(135deg, #0072ff, #00c6ff); }
+.b4-gradient-front { background: linear-gradient(135deg, #f7b733, #fc4a1a); }
+.b4-gradient-back { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
+.b5-gradient-front { background: #0b150d; color: #00ff66; border: 1px solid rgba(0,255,102,0.3); }
+.b5-gradient-back { background: #040805; color: #00ff66; }
+
+.blueprint-meta-details-box {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.blueprint-meta-details-box h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--google-text-primary-dark);
+}
+
+.blueprint-meta-details-box p {
+    font-size: 0.88rem;
+    color: var(--google-text-secondary-muted);
+    line-height: 1.45;
+    margin-bottom: 20px;
+}
+
+.btn-blueprint-selection-action {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    color: var(--g-color-blue);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-blueprint-selection-action:hover,
+.blueprint-box.selected-active-blueprint .btn-blueprint-selection-action {
+    background-color: var(--g-color-blue);
+    color: var(--google-white-bg);
+    border-color: var(--g-color-blue);
+}
+
+/* ================= CONFIGURATION USER TERMINAL FORM DESIGNS ELEMENTS INPUTS ================= */
+.dynamic-configuration-terminal-form {
+    padding: 32px;
+    margin-top: 16px;
+}
+
+.form-title-bar-node {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--google-border-color-subtle);
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+}
+
+.form-title-bar-node i { font-size: 1.5rem; }
+.form-title-bar-node h2 { font-size: 1.4rem; font-weight: 400; }
+.form-title-bar-node span { color: var(--g-color-blue); font-weight: 500; }
+
+.form-inputs-layout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.span-full-width-column { grid-column: 1 / -1; }
+
+.form-input-element-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-input-element-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--google-text-secondary-muted);
+}
+
+.form-input-element-group input,
+.form-input-element-group select {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 8px;
+    color: var(--google-text-primary-dark);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input-element-group input:focus,
+.form-input-element-group select:focus {
+    border-color: var(--g-color-blue);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+.nfc-disabled-state-input-style {
+    background-color: #f5f5f5 !important;
+    color: var(--google-text-tertiary-light) !important;
+    cursor: not-allowed !important;
+}
+
+.conditional-sub-form-block {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px dashed var(--google-border-color-standard);
+    animation: applicationFrameEntranceFadeTransition 0.3s ease-out;
+}
+
+/* Commercial B2B UI Panels Blocks styles cards sections blueprints lines vectors sets */
+.commercial-b2b-hero-card {
+    text-align: center;
+    padding: 64px 32px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+.commercial-b2b-hero-card h2 { margin: 20px 0 10px 0; font-size: 1.6rem; font-weight: 400; }
+.commercial-b2b-hero-card p { color: var(--google-text-secondary-muted); line-height: 1.5; margin-bottom: 28px; font-size: 0.98rem; }
+.btn-b2b-corporate-consultation {
+    background-color: var(--google-text-primary-dark); color: var(--google-white-bg); border: none;
+    padding: 14px 36px; border-radius: 50px; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: 0.2s;
+}
+.btn-b2b-corporate-consultation:hover { background-color: #3c4043; box-shadow: var(--elevation-shadow-1); }
+
+/* ================= CLIENT NODE OPERATIONS DASHBOARD IMPLEMENTATIONS ================= */
+.dashboard-user-hero-header-block {
+    margin-bottom: 40px;
+    border-left: 4px solid var(--g-color-blue);
+    padding-left: 18px;
+}
+.dashboard-user-hero-header-block h2 { font-size: 1.75rem; font-weight: 400; margin-bottom: 6px; }
+.dashboard-user-hero-header-block p { color: var(--google-text-secondary-muted); font-size: 0.95rem; }
+
+.dashboard-analytics-counters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 44px;
+}
+
+.metric-counter-item-card {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.metric-label-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--google-text-secondary-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-numerical-value-text {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--google-text-primary-dark);
+}
+
+.table-ledger-container-card { padding: 0; overflow: hidden; }
+.table-header-title-caption-bar { padding: 24px 32px 16px 32px; border-bottom: 1px solid var(--google-border-color-subtle); }
+.table-header-title-caption-bar h3 { font-size: 1.15rem; font-weight: 500; }
+
+.responsive-table-overflow-axis-wrapper { width: 100%; overflow-x: auto; }
+.historical-orders-data-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left; min-width: 850px; }
+.historical-orders-data-table th, .historical-orders-data-table td { padding: 16px 32px; border-bottom: 1px solid var(--google-border-color-subtle); }
+.historical-orders-data-table th { background-color: var(--google-light-gray-surface); color: var(--google-text-secondary-muted); font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.historical-orders-data-table tr:hover td { background-color: rgba(248,249,250,0.6); }
+
+.status-badge-pill-ui { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; display: inline-block; }
+.state-pending-badge { background-color: rgba(251, 188, 5, 0.12); color: #b08200; }
+.state-success-badge { background-color: rgba(52, 168, 83, 0.12); color: var(--g-color-green); }
+
+.empty-table-state-fallback-notice { text-align: center; padding: 64px; color: var(--google-text-secondary-muted); display: flex; flex-direction: column; gap: 14px; align-items: center; }
+
+/* ================= AUTH OVERLAY SYSTEM FRAME MODAL CANVAS WINDOWS ================= */
+.modal-blur-curtain-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(32, 33, 36, 0.4);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); z-index: 5000;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.integrated-auth-modal-box { width: 450px; max-width: 92%; padding: 36px; position: relative; animation: authModalEntranceTriggerScaleTransform 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.btn-close-modal-window-trigger { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--google-text-secondary-muted); font-size: 1.8rem; cursor: pointer; }
+
+.auth-modal-tabs-navigation-header { display: flex; border-bottom: 1px solid var(--google-border-color-subtle); margin-bottom: 24px; }
+.auth-toggle-tab-btn { flex: 1; padding: 12px; background: none; border: none; color: var(--google-text-secondary-muted); font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: 0.2s; }
+.auth-toggle-tab-btn.active-tab-btn { color: var(--g-color-blue); box-shadow: inset 0 -2px 0 var(--g-color-blue); font-weight: 700; }
+
+.auth-form-elements-vertical-stack { display: flex; flex-direction: column; gap: 20px; }
+.auth-error-output-alert-banner { background-color: rgba(234, 67, 53, 0.08); color: var(--g-color-red); padding: 12px; border-radius: 6px; font-size: 0.84rem; text-align: center; font-weight: 500; border: 1px solid rgba(234,67,53,0.15); }
+
+.btn-execute-auth-action-submission {
+    width: 100%; padding: 14px; background-color: var(--g-color-blue); border: none; color: var(--google-white-bg);
+    font-weight: 500; border-radius: 8px; font-size: 0.95rem; cursor: pointer; margin-top: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.btn-execute-auth-action-submission:hover { background-color: #357ae8; box-shadow: var(--elevation-shadow-1); }
+
+/* ================= SLIDING INVOICE WORKSPACE SIDEBAR CANVAS DRAWER ================= */
+.right-sliding-checkout-drawer-container {
+    position: fixed; top: 0; right: -500px; width: 480px; max-width: 100%; height: 100%;
+    background-color: var(--google-white-bg); box-shadow: -4px 0 24px rgba(0,0,0,0.15); z-index: 4000;
+    padding: 36px; display: flex; flex-direction: column; gap: 28px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.right-sliding-checkout-drawer-container.drawer-open-active-state { right: 0; }
+
+.drawer-header-title-bar-node { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--google-border-color-subtle); padding-bottom: 16px; }
+.drawer-header-title-bar-node h3 { font-size: 1.2rem; font-weight: 500; }
+.btn-terminate-drawer-window-trigger { background: none; border: none; color: var(--google-text-secondary-muted); font-size: 2rem; cursor: pointer; }
+
+.drawer-scrollable-content-body-area { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 24px; padding-right: 4px; }
+
+.drawer-guest-warning-notice-box-card { background-color: rgba(251, 188, 5, 0.08); border: 1px solid rgba(251, 188, 5, 0.2); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #b08200; font-size: 0.85rem; line-height: 1.45; }
+.btn-drawer-guest-auth-shortcut-trigger { background-color: var(--g-color-yellow); border: none; padding: 10px; border-radius: 6px; font-weight: 700; color: var(--google-text-primary-dark); cursor: pointer; font-size: 0.82rem; }
+
+.invoice-itemized-summary-panel-card { background-color: var(--google-light-gray-surface); border: 1px solid var(--google-border-color-standard); padding: 20px; border-radius: 12px; }
+.invoice-row-line-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem; color: var(--google-text-secondary-muted); }
+.invoice-dashed-separator-line { border: 0; border-top: 1px dashed var(--google-border-color-standard); margin: 14px 0; }
+.grand-total-line-item { font-size: 1.3rem; font-weight: 700; color: var(--google-text-primary-dark); margin-bottom: 0; }
+.promo-badge-pill-ui { background-color: rgba(52, 168, 83, 0.12); color: var(--g-color-green); padding: 2px 10px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; }
+
+/* ================= COMMERCIAL GIANT NATIVE GOOGLE STYLED UPI GATEWAY INTERFACE ================= */
+.native-upi-payment-gateway-hub-wrapper {
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.native-upi-payment-gateway-hub-wrapper h4 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--google-text-primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Visual QR Scanning Frame Matrix configurations layout maps */
+.upi-payment-qr-code-display-visual-frame-box {
+    background-color: var(--google-light-gray-surface);
+    border: 1px solid var(--google-border-color-subtle);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.qr-code-placeholder-wrapper-graphic {
+    background-color: var(--google-white-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--google-border-color-standard);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Laser scan simulation indicator line asset modules graphics */
+.qr-animated-scanner-laser-line-element {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--g-color-blue);
+    box-shadow: 0 0 8px var(--g-color-blue);
+    animation: upiQrLaserScanLoopLineMotion 2.2s linear infinite;
+}
+
+.qr-scanning-caption-text-directive {
+    font-size: 0.78rem;
+    color: var(--google-text-secondary-muted);
+    line-height: 1.4;
+    max-width: 280px;
+}
+
+.upi-visual-or-separator-line-element {
+    text-align: center;
+    border-bottom: 1px solid var(--google-border-color-subtle);
+    line-height: 0.1em;
+    margin: 10px 0;
+}
+.upi-visual-or-separator-line-element span {
+    background: var(--google-white-bg);
+    padding: 0 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--google-text-tertiary-light);
+    letter-spacing: 0.5px;
+}
+
+/* Clickable direct intent module link layouts boxes entries */
+.interactive-upi-intent-action-module-row-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.interactive-upi-intent-action-module-row-card:hover {
+    border-color: var(--g-color-blue);
+    background-color: rgba(66, 133, 244, 0.02);
+    box-shadow: 0 2px 6px rgba(66,133,244,0.08);
+}
+
+.intent-icon-left-side-frame-badge {
+    width: 44px; height: 44px; border-radius: 50%; background-color: var(--google-light-gray-surface);
+    display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;
+}
+
+.intent-meta-text-directives-block h5 { font-size: 0.9rem; font-weight: 500; color: var(--google-text-primary-dark); margin-bottom: 2px; }
+.intent-meta-text-directives-block p { font-size: 0.78rem; color: var(--google-text-secondary-muted); line-height: 1.3; }
+
+/* Prefilled Typing Terminal Box View frameworks rules blocks sets variables properties */
+.upi-prefilled-terminal-typing-view-box {
+    background-color: #f1f3f4;
+    border: 1px solid var(--google-border-color-standard);
+    border-radius: 8px;
+    padding: 16px;
+    animation: applicationFrameEntranceFadeTransition 0.25s ease-out;
+}
+.terminal-header-title { font-size: 0.78rem; font-weight: 700; color: var(--google-text-secondary-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+
+.prefilled-input-wrapper-box-element {
+    display: flex; align-items: center; background-color: var(--google-white-bg);
+    border: 1px solid var(--google-border-color-standard); border-radius: 6px; overflow: hidden;
+}
+.currency-symbol-tag { padding: 0 12px; font-weight: 700; color: var(--google-text-primary-dark); background-color: var(--google-light-gray-surface); height: 44px; display: flex; align-items: center; border-right: 1px solid var(--google-border-color-standard); }
+.prefilled-input-wrapper-box-element input { border: none !important; box-shadow: none !important; height: 44px; padding: 0 12px; font-weight: 700; font-size: 1.1rem; color: var(--google-text-primary-dark); background-color: var(--google-white-bg); flex-grow: 1; }
+.lock-status-indicator-badge { padding: 0 12px; font-size: 0.75rem; font-weight: 500; color: var(--google-text-secondary-muted); display: flex; align-items: center; gap: 4px; background-color: rgba(52, 168, 83, 0.05); height: 44px; border-left: 1px solid var(--google-border-color-standard); white-space: nowrap; }
+
+.btn-drawer-payment-execution-submit-gate {
+    width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.btn-drawer-payment-execution-submit-gate.free-promo-variant { background-color: var(--g-color-green); color: var(--google-white-bg); }
+.btn-drawer-payment-execution-submit-gate.free-promo-variant:hover { background-color: #2d9449; }
+.btn-drawer-payment-execution-submit-gate.commercial-paid-variant { background-color: var(--google-text-primary-dark); color: var(--google-white-bg); }
+.btn-drawer-payment-execution-submit-gate.commercial-paid-variant:hover { background-color: #3c4043; }
+
+/* Backdrop Veil Curtain properties tags layers controls layout */
+.global-layout-underlying-backdrop-curtain-veil { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); z-index: 3900; display: none; }
+.hidden { display: none !important; }
+
+/* STICKY FLOATING HORIZONTAL CONSOLE DISPATCH ACTIONS MODALS FOULS BOOTSTRAPS PANELS */
+.sticky-floating-horizontal-action-footer-prompt-bar {
+    position: fixed; bottom: 0; left: 0; width: 100%; padding: 18px 24px; background-color: var(--google-white-bg);
+    border-top: 1px solid var(--google-border-color-standard); box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+    z-index: 900; animation: upiQrLaserScanLoopLineMotion 0.3s ease;
+}
+.footer-prompt-max-constrain { width: 100%; max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.footer-prompt-meta-info-text-tag { font-size: 0.88rem; font-weight: 500; color: var(--google-text-secondary-muted); display: flex; align-items: center; gap: 8px; }
+.btn-trigger-drawer-canvas-open-action {
+    background-color: var(--g-color-blue); color: var(--google-white-bg); border: none; padding: 14px 32px;
+    border-radius: 8px; font-weight: 500; font-size: 0.92rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background-color 0.2s;
+}
+.btn-trigger-drawer-canvas-open-action:hover { background-color: #357ae8; }
+
+/* ================= COMMERCIAL GLOBAL RE-DESIGNED BRAND CORPORATE FOOTER ================= */
+.google-enterprise-footer-section {
+    background-color: var(--google-light-gray-surface);
+    border-top: 1px solid var(--google-border-color-subtle);
+    padding: 56px 24px;
+    margin-top: 64px;
+}
+
+.footer-max-constrain-layout {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* Alignment rules strictly isolating NatNex at Left Side layout node */
+.footer-identity-branding-far-left-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 320px;
+}
+
+.footer-natnex-corporate-logo-moniker {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--google-text-primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.corporate-icon-dot-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--g-color-green);
+    display: inline-block;
+}
+
+.corporate-copyright-meta-string {
+    font-size: 0.78rem;
+    color: var(--google-text-tertiary-light);
+    line-height: 1.45;
+}
+
+/* Grid columns spanning extensively right beside the branding block */
+.footer-communication-coordinates-spanning-grid-system {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 36px;
+    border-top: 1px solid var(--google-border-color-standard);
+    padding-top: 40px;
+}
+
+.coordinates-column-node {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.coordinates-column-node h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--google-text-secondary-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.hyperlink-coordinate-row,
+.static-coordinate-text-line {
+    font-size: 0.88rem;
+    color: var(--google-text-secondary-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hyperlink-coordinate-row a {
+    color: var(--google-text-secondary-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.hyperlink-coordinate-row a:hover {
+    color: var(--g-color-blue);
+    text-decoration: underline;
+}
+
+/* Informational Shared Blocks configurations structural modifiers tags layouts components */
+.global-section-break-line { border: 0; height: 1px; background-color: var(--google-border-color-subtle); margin: 56px 0; }
+.static-informational-block-card { padding: 32px; margin-bottom: 24px; background: var(--google-white-bg); }
+.info-block-header { font-size: 1.25rem; font-weight: 400; color: var(--google-text-primary-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.static-informational-block-card p { font-size: 0.95rem; color: var(--google-text-secondary-muted); line-height: 1.6; }
+.capability-matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px; }
+.capability-item-node { background-color: var(--google-light-gray-surface); padding: 24px; border-radius: 12px; border: 1px solid var(--google-border-color-subtle); }
+.capability-item-node i { font-size: 1.4rem; margin-bottom: 12px; display: inline-block; }
+.capability-item-node h4 { font-size: 1.05rem; font-weight: 500; margin-bottom: 6px; }
+.capability-item-node p { font-size: 0.85rem; line-height: 1.45; }
+.pipeline-flow-flex-container { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+.pipeline-step-node { flex: 1; min-width: 240px; background-color: var(--google-light-gray-surface); padding: 24px; border-radius: 12px; position: relative; border: 1px solid var(--google-border-color-subtle); }
+.step-index-circle { position: absolute; top: -12px; left: 20px; background-color: var(--google-text-primary-dark); color: var(--google-white-bg); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.78rem; }
+.pipeline-step-node h4 { margin-bottom: 6px; font-size: 1rem; font-weight: 500; margin-top: 4px; }
+.pipeline-step-node p { font-size: 0.85rem; }
+.faq-accordion-item-box { background-color: var(--google-light-gray-surface); padding: 18px; border-radius: 8px; margin-bottom: 14px; border-left: 4px solid var(--g-color-yellow); }
+.faq-accordion-item-box p { margin-top: 6px; font-size: 0.88rem; }
+
+/* Structural CSS Keyframes Triggers Animations Core Engines definitions blocks loops vectors */
+@keyframes coreSystemGlowBorderSpinRotation {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes applicationFrameEntranceFadeTransition {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes authModalEntranceTriggerScaleTransform {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes upiQrLaserScanLoopLineMotion {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+
+/* Responsive Media Breakdown Adapters rules overrides bounds context panels viewports */
+@media (max-width: 992px) {
+    .central-navigation-links { display: none !important; }
+    .central-navigation-links.session-dependent-link { display: flex !important; }
+    .right-sliding-checkout-drawer-container { width: 100%; right: -100%; }
+    .footer-max-constrain-layout { gap: 32px; }
+    .footer-communication-coordinates-spanning-grid-system { grid-template-columns: 1fr; gap: 24px; }
+}
+
+// ================= CLIENT APPLICATION STATE CONTEXT MANAGEMENT MATRIX =================
+let activeWorkspaceViewState = 'portal';     // Active Frame flags: 'portal' | 'dashboard'
+let activeAuthenticatedUserProfile = null;   // Active runtime profile data object node
+let targetedChosenProfileBlueprint = null;   // Active selected configuration substrate item
+const BASE_RETAIL_PRICE_TARIFF_RATE = 150;
+
+// Simulated Distributed JSON Memory Stack Arrayacting as Client Vault Repository
+let clientDatabaseMockRegistryCollection = [
+    { name: "Abhinibesh Gupta", email: "abhi@natnex.tech", password: "123", historicallyCompletedOrdersCount: 0, profileRegistryLedgerArray: [] }
+];
+
+// Entry initialization baseline context execution mapping on frame load hooks
+function initializeApplicationRuntimeLifecycle() {
+    refreshAuthenticationStateHeaderView();
+    navigateToWorkspaceView('portal');
+}
+
+// Global Workspace Client-Side Router Router Controller Simulations Engines
+function navigateToWorkspaceView(targetViewFrameStringId) {
+    activeWorkspaceViewState = targetViewFrameStringId;
+    
+    // Toggle active markers configurations boundaries classes triggers
+    document.querySelectorAll('.application-view-frame').forEach(frame => frame.classList.remove('active-frame'));
+    document.querySelectorAll('.nav-anchor').forEach(anchor => anchor.classList.remove('active-anchor'));
+    
+    const matchedViewFrameDomElement = document.getElementById(`workspace-view-dashboard`);
+    const portalViewFrameDomElement = document.getElementById(`workspace-view-portal`);
+    const targetedViewFrameDomNode = document.getElementById(`workspace-view-${targetViewFrameStringId}`);
+    
+    if (targetedViewFrameDomNode) {
+        targetedViewFrameDomNode.classList.add('active-frame');
+    }
+
+    // Handle Navbar Anchors State Tracking indicators
+    if (targetViewFrameStringId === 'portal') {
+        document.getElementById('lnk-portal').classList.add('active-anchor');
+        document.querySelectorAll('.structural-page-link').forEach(el => el.style.display = 'inline-block');
+    } else if (targetViewFrameStringId === 'dashboard') {
+        const dashboardAnchorDomLink = document.getElementById('lnk-dashboard');
+        if (dashboardAnchorDomLink) dashboardAnchorDomLink.classList.add('active-anchor');
+        document.querySelectorAll('.structural-page-link').forEach(el => el.style.display = 'none');
+        executeDashboardDataRendersPipelines();
+    }
+}
+
+// Intention Segment Tab Toggles Switch (Individual Suite versus Corporate Scale deployments)
+function switchActiveServiceSegment(targetSegmentKeyString) {
+    document.querySelectorAll('.segment-tab-trigger').forEach(trigger => trigger.classList.remove('active-trigger'));
+    document.querySelectorAll('.service-segment-panel').forEach(panel => panel.classList.remove('active-panel'));
+    
+    // Fallbacks definitions elements mappings keys variables parameters controls loops sets
+    event.target.classList.add('active-trigger');
+    
+    if (targetSegmentKeyString === 'individual') {
+        document.getElementById('panel-segment-individual').classList.add('active-panel');
+        if (targetedChosenProfileBlueprint !== null) {
+            document.getElementById('footer-action-proceed-bar-prompt').classList.remove('hidden');
+        }
+    } else {
+        document.getElementById('panel-segment-commercial').classList.add('active-panel');
+        document.getElementById('footer-action-proceed-bar-prompt').classList.add('hidden');
+    }
+}
+
+// ================= MODAL DIALOG INTERACTIVE LAYER AUTHENTICATION SUB-SYSTEMS =================
+let currentActiveAuthModalWindowContextMode = 'login'; 
+
+function toggleAuthModalWindowDisplayState(shouldRenderModalFrame, specificTargetContextMode = 'login') {
+    const targetModalWindowDomNode = document.getElementById('modal-screen-auth-backdrop');
+    if (shouldRenderModalFrame) {
+        targetModalWindowDomNode.classList.remove('hidden');
+        switchActiveAuthFormContextMode(specificTargetContextMode);
+    } else {
+        targetModalWindowDomNode.classList.add('hidden');
+        document.getElementById('banner-auth-error-feedback-logs').classList.add('hidden');
+    }
+}
+
+function switchActiveAuthFormContextMode(targetContextFormModeKey) {
+    currentActiveAuthModalWindowContextMode = targetContextFormModeKey;
+    document.getElementById('banner-auth-error-feedback-logs').classList.add('hidden');
+    
+    const tabLoginDomBtn = document.getElementById('btn-auth-tab-login');
+    const tabRegisterDomBtn = document.getElementById('btn-auth-tab-register');
+    const inputFullNameContainerBlockNode = document.getElementById('container-field-auth-fullname');
+    const runtimeActionExecutionTriggerBtn = document.getElementById('btn-trigger-auth-execution-engine');
+
+    if (targetContextFormModeKey === 'login') {
+        tabLoginDomBtn.classList.add('active-tab-btn');
+        tabRegisterDomBtn.classList.remove('active-tab-btn');
+        inputFullNameContainerBlockNode.classList.add('hidden');
+        runtimeActionExecutionTriggerBtn.innerText = "Authorize Core Session Token";
+    } else {
+        tabLoginDomBtn.classList.remove('active-tab-btn');
+        tabRegisterDomBtn.classList.add('active-tab-btn');
+        inputFullNameContainerBlockNode.classList.remove('hidden');
+        runtimeActionExecutionTriggerBtn.innerText = "Provision Distributed Account Node";
+    }
+}
+
+function processClientAuthFormSubmission() {
+    const stringCapturedEmail = document.getElementById('field-auth-email').value.trim();
+    const stringCapturedPassword = document.getElementById('field-auth-password').value;
+    const stringCapturedFullName = document.getElementById('field-auth-fullname').value.trim();
+    const domAlertErrorBannerLoggingZone = document.getElementById('banner-auth-error-feedback-logs');
+
+    if (!stringCapturedEmail || !stringCapturedPassword) {
+        domAlertErrorBannerLoggingZone.innerText = "Security Halt: Crucial verification index vectors blank.";
+        domAlertErrorBannerLoggingZone.classList.remove('hidden');
+        return;
+    }
+
+    if (currentActiveAuthModalWindowContextMode === 'login') {
+        // Run Simulated Record Matching Lookup Routines
+        const foundProfileMatchInstance = clientDatabaseMockRegistryCollection.find(profile => profile.email.toLowerCase() === stringCapturedEmail.toLowerCase() && profile.password === stringCapturedPassword);
+        if (foundProfileMatchInstance) {
+            activeAuthenticatedUserProfile = foundProfileMatchInstance;
+            toggleAuthModalWindowDisplayState(false);
+            refreshAuthenticationStateHeaderView();
+            executePricingMatrixCalculationsEngine(); 
+            alert(`Handshake Complete! Authentication session token securely locked onto node: ${activeAuthenticatedUserProfile.name}`);
+        } else {
+            domAlertErrorBannerLoggingZone.innerText = "Handshake Rejection: Invalid Credentials Signature Tokens Match Failure.";
+            domAlertErrorBannerLoggingZone.classList.remove('hidden');
+        }
+    } else {
+        // Execute Structuring New Account Mapping Registries Variables Contexts Builders paths 
+        if (!stringCapturedFullName) {
+            domAlertErrorBannerLoggingZone.innerText = "Validation Halt: Full Name credential attribute token missing.";
+            domAlertErrorBannerLoggingZone.classList.remove('hidden');
+            return;
+        }
+
+        const booleanDuplicateEmailFlagChecker = clientDatabaseMockRegistryCollection.some(profile => profile.email.toLowerCase() === stringCapturedEmail.toLowerCase());
+        if (booleanDuplicateEmailFlagChecker) {
+            domAlertErrorBannerLoggingZone.innerText = "Collision Alert: Linked profile registry exists with corresponding email.";
+            domAlertErrorBannerLoggingZone.classList.remove('hidden');
+            return;
+        }
+
+        let compiledNewUserProfileObjectNode = {
+            name: stringCapturedFullName,
+            email: stringCapturedEmail,
+            password: stringCapturedPassword,
+            historicallyCompletedOrdersCount: 0,
+            profileRegistryLedgerArray: []
+        };
+
+        clientDatabaseMockRegistryCollection.push(compiledNewUserProfileObjectNode);
+        activeAuthenticatedUserProfile = compiledNewUserProfileObjectNode;
+        toggleAuthModalWindowDisplayState(false);
+        refreshAuthenticationStateHeaderView();
+        executePricingMatrixCalculationsEngine();
+        alert("Provisioning Matrix Complete. Dedicated user profile environment variables successfully loaded.");
+    }
+}
+
+function triggerSessionUnmountLogoutCommand() {
+    activeAuthenticatedUserProfile = null;
+    refreshAuthenticationStateHeaderView();
+    navigateToWorkspaceView('portal');
+    executePricingMatrixCalculationsEngine();
+    alert("Session data arrays safely garbage collected. Context variables reverted back to standard guest profile parameters.");
+}
+
+function refreshAuthenticationStateHeaderView() {
+    const domMountHeaderWrapperZoneBox = document.getElementById('auth-header-state-mount');
+    const domSessionProtectedDashboardNavLink = document.getElementById('lnk-dashboard');
+
+    if (activeAuthenticatedUserProfile !== null) {
+        domMountHeaderWrapperZoneBox.innerHTML = `
+            <div class="user-profile-session-badge-node">
+                <i class="fa-solid fa-user-check g-blue-text"></i>
+                <span>${activeAuthenticatedUserProfile.name}</span>
+                <button class="btn-session-logout-directive-link" onclick="triggerSessionUnmountLogoutCommand()" title="Terminate Active Session Connection Context"><i class="fa-solid fa-power-off"></i></button>
+            </div>
+        `;
+        if (domSessionProtectedDashboardNavLink) domSessionProtectedDashboardNavLink.classList.remove('hidden');
+    } else {
+        domMountHeaderWrapperZoneBox.innerHTML = `
+            <button class="btn-header-login-trigger-action" onclick="toggleAuthModalWindowDisplayState(true, 'login')"><i class="fa-solid fa-circle-user"></i> Sign In / Register</button>
+        `;
+        if (domSessionProtectedDashboardNavLink) domSessionProtectedDashboardNavLink.classList.add('hidden');
+    }
+}
+
+// ================= VISUAL BLUEPRINTS CAPTURE AND SUBSTRATE MANAGEMENT SELECTION LAYER =================
+function selectProfileTemplateBlueprint(numericalBlueprintId, stringBlueprintNameTitle) {
+    targetedChosenProfileBlueprint = { id: numericalBlueprintId, name: stringBlueprintNameTitle };
+
+    // Update conditional graphics classes visual borders indicators components cards maps layout grids
+    document.querySelectorAll('.blueprint-box').forEach(box => box.classList.remove('selected-active-blueprint'));
+    const newlySelectedCardDomNodeElement = document.getElementById(`card-blueprint-${numericalBlueprintId}`);
+    if (newlySelectedCardDomNodeElement) {
+        newlySelectedCardDomNodeElement.classList.add('selected-active-blueprint');
+    }
+
+    // Mount Config Label variables text string values mappings inputs fields controls labels definitions
+    document.getElementById('lbl-active-configured-blueprint-title').innerText = `${stringBlueprintNameTitle} (Variant substrate node reference #${numericalBlueprintId})`;
+    const domTargetCustomizationFormSectionBlock = document.getElementById('card-customization-form-section');
+    domTargetCustomizationFormSectionBlock.classList.remove('hidden');
+
+    // Make floating prompt execution horizontal bar trace active layout space bounds zones structures
+    document.getElementById('footer-action-proceed-bar-prompt').classList.remove('hidden');
+
+    domTargetCustomizationFormSectionBlock.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    executePricingMatrixCalculationsEngine();
+}
+
+function evaluateHardwareInfrastructureRequirements(domSelectTagReference) {
+    if (domSelectTagReference.value === 'nfc-wireless') {
+        domSelectTagReference.classList.add('nfc-disabled-state-input-style');
+        alert("Hardware Constraint Matrix Failure: Integrated NFC Silicon Modules are restricted pending localized infrastructure deployment validation bounds. Overriding back to high-density dynamic QR layers.");
+        domSelectTagReference.value = 'qr-static';
+        domSelectTagReference.classList.remove('nfc-disabled-state-input-style');
+    }
+}
+
+function toggleConditionalMetadataFields(dropdownSelectedOptionValueText) {
+    const domTargetSubFormBlockPanelCoordinates = document.getElementById('sub-form-conditional-contact-coordinates');
+    if (dropdownSelectedOptionValueText === 'enable') {
+        domTargetSubFormBlockPanelCoordinates.classList.remove('hidden');
+    } else {
+        domTargetSubFormBlockPanelCoordinates.classList.add('hidden');
+    }
+}
+
+// ================= EXCLUSIVE INVOICE DRAWER CHECKS AND HIGH LEVEL UPI GATEWAY CALCULATION CORE =================
+function toggleCheckoutDrawerCanvasDisplayState(shouldOpenSlidingDrawerWindowComponent) {
+    const domSlidingDrawerBoxContainerWindow = document.getElementById('checkout-sidebar-canvas-drawer');
+    const domLayoutUnderlyingBackdropVeilCurtain = document.getElementById('backdrop-veil-checkout-drawer-curtain');
+
+    if (shouldOpenSlidingDrawerWindowComponent) {
+        executePricingMatrixCalculationsEngine();
+        domSlidingDrawerBoxContainerWindow.classList.add('drawer-open-active-state');
+        domLayoutUnderlyingBackdropVeilCurtain.style.display = 'block';
+    } else {
+        domSlidingDrawerBoxContainerWindow.classList.remove('drawer-open-active-state');
+        domLayoutUnderlyingBackdropVeilCurtain.style.display = 'none';
+        
+        // Retract Pre-filled Typing simulation terminal options screens maps states setups definitions traces lines
+        document.getElementById('box-upi-intent-prefilled-typing-terminal-view').classList.add('hidden');
+    }
+}
+
+function executePricingMatrixCalculationsEngine() {
+    if (targetedChosenProfileBlueprint === null) return;
+
+    const domSourceQuantityInputNumberNode = document.getElementById('field-drawer-quantity-counter');
+    let numericalTargetUnitsVolumeQuantityCount = parseInt(domSourceQuantityInputNumberNode.value) || 1;
+
+    if (numericalTargetUnitsVolumeQuantityCount < 1) { 
+        numericalTargetUnitsVolumeQuantityCount = 1; 
+        domSourceQuantityInputNumberNode.value = 1; 
+    }
+
+    let evaluatedInvoiceOutstandingFinancialCostValue = 0;
+    
+    const domSummaryBlueprintNameLabelTarget = document.getElementById('lbl-summary-blueprint-name-target');
+    const domSummaryPricingTierBadgeLabelTarget = document.getElementById('lbl-summary-pricing-tier-badge-target');
+    const domSummaryInvoiceGrandTotalValueTextTarget = document.getElementById('lbl-summary-invoice-grand-total-value-target');
+    
+    const domDrawerGuestVerificationWarningBannerCard = document.getElementById('banner-drawer-guest-verification-warning');
+    const domNativeUpiGatewayHubMainWrapperBoxSection = document.getElementById('container-native-upi-gateway-hub');
+    const domDrawerCheckoutActionsInjectMountZoneTarget = document.getElementById('container-drawer-checkout-actions-mount-zone');
+
+    domSummaryBlueprintNameLabelTarget.innerText = targetedChosenProfileBlueprint.name;
+
+    // Check account order log historical dimensions to evaluate promotional qualification bounds
+    let evaluateIsEligibleForAbsoluteFirstPurchaseFreePromo = false;
+    
+    if (activeAuthenticatedUserProfile !== null) {
+        domDrawerGuestVerificationWarningBannerCard.classList.add('hidden');
+        if (activeAuthenticatedUserProfile.historicallyCompletedOrdersCount === 0) {
+            evaluateIsEligibleForAbsoluteFirstPurchaseFreePromo = true;
+        }
+    } else {
+        domDrawerGuestVerificationWarningBannerCard.classList.remove('hidden');
+        evaluateIsEligibleForAbsoluteFirstPurchaseFreePromo = true; // Preview logic mapping potential rules triggers logs
+    }
+
+    if (evaluateIsEligibleForAbsoluteFirstPurchaseFreePromo) {
+        domSummaryPricingTierBadgeLabelTarget.innerText = "Commercial Launch Bonus: 1st Order Absolute ₹0 Cost Structure Locked";
+        domSummaryPricingTierBadgeLabelTarget.className = "promo-badge-pill-ui";
+        domSummaryPricingTierBadgeLabelTarget.style.backgroundColor = "rgba(52, 168, 83, 0.12)";
+        domSummaryPricingTierBadgeLabelTarget.style.color = "var(--g-color-green)";
+
+        // Irrespective of volume, the total invoice for the first completed ledger event is systematically overridden to 0
+        evaluatedInvoiceOutstandingFinancialCostValue = 0;
+        domNativeUpiGatewayHubMainWrapperBoxSection.classList.add('hidden');
+        
+        domDrawerCheckoutActionsInjectMountZoneTarget.innerHTML = `
+            <button class="btn-drawer-payment-execution-submit-gate free-promo-variant" ${activeAuthenticatedUserProfile === null ? 'disabled style="background-color:#bbb; cursor:not-allowed;"' : ''} onclick="commitProfileOrderTransactionDispatchPipeline(true, 0)">Confirm Zero-Fee First Allocation</button>
+        `;
+    } else {
+        // Enforce standard commercial bulk billing calculation algorithm logic maps configurations protocols sets rules
+        domSummaryPricingTierBadgeLabelTarget.innerText = `Standard Commercial Rates Applied (₹${BASE_RETAIL_PRICE_TARIFF_RATE} / Profile)`;
+        domSummaryPricingTierBadgeLabelTarget.className = "promo-badge-pill-ui";
+        domSummaryPricingTierBadgeLabelTarget.style.backgroundColor = "rgba(66, 133, 244, 0.1)";
+        domSummaryPricingTierBadgeLabelTarget.style.color = "var(--g-color-blue)";
+
+        evaluatedInvoiceOutstandingFinancialCostValue = numericalTargetUnitsVolumeQuantityCount * BASE_RETAIL_PRICE_TARIFF_RATE;
+        
+        if (activeAuthenticatedUserProfile !== null) domSlidingDrawerBoxContainerWindow = domNativeUpiGatewayHubMainWrapperBoxSection.classList.remove('hidden');
+        
+        domDrawerCheckoutActionsInjectMountZoneTarget.innerHTML = `
+            <button class="btn-drawer-payment-execution-submit-gate commercial-paid-variant" ${activeAuthenticatedUserProfile === null ? 'disabled style="background-color:#bbb; cursor:not-allowed;"' : ''} onclick="commitProfileOrderTransactionDispatchPipeline(false, ${evaluatedInvoiceOutstandingFinancialCostValue})">Authorize Secure UPI Settlement Infrastructure</button>
+        `;
+    }
+
+    domSummaryInvoiceGrandTotalValueTextTarget.innerText = `₹${evaluatedInvoiceOutstandingFinancialCostValue}`;
+    
+    // Map current calculated dynamic pricing constraints strings indices targets onto back end inputs values display logs variables boxes
+    document.getElementById('field-upi-locked-prescribed-amount-display').value = evaluatedInvoiceOutstandingFinancialCostValue;
+}
+
+function triggerClickableUpiIntentHandshakeProcessingView() {
+    const domTargetPrefilledTypingTerminalViewBoxNode = document.getElementById('box-upi-intent-prefilled-typing-terminal-view');
+    domTargetPrefilledTypingTerminalViewBoxNode.classList.remove('hidden');
+    
+    const stringPresetPrescribedAmountCapturedValue = document.getElementById('field-upi-locked-prescribed-amount-display').value;
+    alert(`UPI Handshake Handled: Prescribed amount payload string token of [₹${stringPresetPrescribedAmountCapturedValue}] securely pre-written and auto-filled inside target transmission registry fields.`);
+}
+
+// ================= CORE TRANSACTION INJECTION & LEDGER ROUTING PROCESSING ENGINE =================
+function commitProfileOrderTransactionDispatchPipeline(booleanWhollyFreeFirstPromoFlag, numericalFinalizedInvoiceAmountValueDue) {
+    if (activeAuthenticatedUserProfile === null) {
+        alert("Critical Failure: Session verification contexts expired or corrupted. Operation execution halted.");
+        return;
+    }
+
+    const domSourceCounterVolumeInputNodeValue = document.getElementById('field-drawer-quantity-counter');
+    let numericalTotalVolumeUnitsConfirmedCount = parseInt(domSourceCounterVolumeInputNodeValue.value) || 1;
+    const stringPrintedMonikerCapturedName = document.getElementById('field-print-name').value.trim() || "Unspecified System Client";
+
+    // Structuring cryptographically styled unique transaction token UUID strings descriptors parameters attributes grids sets fields
+    let stringGeneratedInvoiceRandomUuidToken = "SMR-" + Math.floor(200000 + Math.random() * 799999);
+    let stringSystemClockCurrentTimestampMarker = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' });
+
+    let consolidatedCompiledReceiptOrderMetadataObjectInstance = {
+        orderUuid: stringGeneratedInvoiceRandomUuidToken,
+        timestamp: stringSystemClockCurrentTimestampMarker,
+        blueprintModelName: targetedChosenProfileBlueprint.name,
+        monikerNameLabel: stringPrintedMonikerCapturedName,
+        volumeCount: numericalTotalVolumeUnitsConfirmedCount,
+        financialCost: numericalFinalizedInvoiceAmountValueDue,
+        pipelineStateStatus: "Compiling Visual Blueprints Matrix"
+    };
+
+    // Increment historical count markers to finalize status matrices parameters logic tracking variables pools
+    activeAuthenticatedUserProfile.historicallyCompletedOrdersCount += 1;
+
+    // Push the metadata receipt structural packet right into top index arrays trace profiles context sets structures maps paths
+    activeAuthenticatedUserProfile.profileRegistryLedgerArray.unshift(consolidatedCompiledReceiptOrderMetadataObjectInstance);
+
+    alert(`E-Commerce Success String: Transaction processing block closed out successfully under token record: ${stringGeneratedInvoiceRandomUuidToken}.`);
+    
+    toggleCheckoutDrawerCanvasDisplayState(false);
+    // Direct routing change updates pipelines triggers to force display workspace updates immediately over active client operational logs dashboard screens
+    navigateToWorkspaceView('dashboard');
+}
+
+// ================= CUSTOMER OPERATION CONSOLE DATA MATRIX LAYER RENDER ENGINE =================
+function executeDashboardDataRendersPipelines() {
+    if (activeAuthenticatedUserProfile === null) return;
+
+    // Synchronize Numerical Indicators Widgets values variables indicators metrics
+    document.getElementById('lbl-dashboard-welcome-user-name').innerText = activeAuthenticatedUserProfile.name;
+    document.getElementById('cnt-metric-total-orders').innerText = activeAuthenticatedUserProfile.profileRegistryLedgerArray.length;
+
+    const domMetricPromoStatusWidgetLabelTarget = document.getElementById('cnt-metric-promo-status');
+    if (activeAuthenticatedUserProfile.historicallyCompletedOrdersCount > 0) {
+        domMetricPromoStatusWidgetLabelTarget.innerText = "Utilized Slot";
+        domMetricPromoStatusWidgetLabelTarget.className = "metric-numerical-value-text g-red-text";
+    } else {
+        domMetricPromoStatusWidgetLabelTarget.innerText = "1 Free Slot Open";
+        domMetricPromoStatusWidgetLabelTarget.className = "metric-numerical-value-text g-green-text";
+    }
+
+    const domMetricAccountLevelTierBadgeTarget = document.getElementById('cnt-metric-account-tier');
+    if (activeAuthenticatedUserProfile.profileRegistryLedgerArray.length >= 4) {
+        domMetricAccountLevelTierBadgeTarget.innerText = "Elite Corporate Node";
+        domMetricAccountLevelTierBadgeTarget.className = "metric-numerical-value-text g-blue-text";
+    } else {
+        domMetricAccountLevelTierBadgeTarget.innerText = "Standard Matrix Tier";
+        domMetricAccountLevelTierBadgeTarget.className = "metric-numerical-value-text text-[#202124]";
+    }
+
+    const domMountTargetTableRowsContainerZoneNode = document.getElementById('mount-target-table-rows-ledger');
+    const domPlaceholderEmptyTableStateFallbackNoticeCard = document.getElementById('placeholder-empty-table-state-notice');
+
+    // Sweep out standard native children data records lists fragments nodes items before reconstruction
+    domMountTargetTableRowsContainerZoneNode.innerHTML = "";
+
+    if (activeAuthenticatedUserProfile.profileRegistryLedgerArray.length === 0) {
+        domPlaceholderEmptyTableStateFallbackNoticeCard.classList.remove('hidden');
+    } else {
+        domPlaceholderEmptyTableStateFallbackNoticeCard.classList.add('hidden');
+        
+        activeAuthenticatedUserProfile.profileRegistryLedgerArray.forEach((ledgerItem, structuralIndexIndexCounter) => {
+            let stringStatusBadgeVisualClassOverrideStyling = "status-badge-pill-ui state-pending-badge";
+            if (structuralIndexIndexCounter > 0) {
+                ledgerItem.pipelineStateStatus = "Dispatched via Secure Fleet Channels";
+                stringStatusBadgeVisualClassOverrideStyling = "status-badge-pill-ui state-success-badge";
+            }
+
+            let stringCompiledRowHtmlMarkupSyntaxNode = `
+                <tr>
+                    <td style="font-family:monospace; font-weight:700; color:var(--g-color-blue);">${ledgerItem.orderUuid}</td>
+                    <td>${ledgerItem.timestamp}</td>
+                    <td><strong>${ledgerItem.blueprintModelName}</strong></td>
+                    <td style="color:var(--google-text-secondary-muted); font-style:italic;">"${ledgerItem.monikerNameLabel}"</td>
+                    <td>${ledgerItem.volumeCount} Cards Units</td>
+                    <td style="font-weight:700; color:${ledgerItem.financialCost === 0 ? 'var(--g-color-green)' : 'var(--google-text-primary-dark)'};">${ledgerItem.financialCost === 0 ? '₹0 (LAUNCH BONUS)' : '₹' + ledgerItem.financialCost}</td>
+                    <td><span class="${stringStatusBadgeVisualClassOverrideStyling}">${ledgerItem.pipelineStateStatus}</span></td>
+                </tr>
+            `;
+            domMountTargetTableRowsContainerZoneNode.innerHTML += stringCompiledRowHtmlMarkupSyntaxNode;
+        });
+    }
+}
+
+// Attach client structural DOM components readiness check bindings triggers to activate scope environment lifecycles
+window.addEventListener('DOMContentLoaded', initializeApplicationRuntimeLifecycle);
