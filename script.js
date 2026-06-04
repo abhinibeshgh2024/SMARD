@@ -208,11 +208,16 @@ function refreshAuthenticationStateHeaderView() {
             </div>
         `;
         if (domSessionProtectedDashboardNavLink) domSessionProtectedDashboardNavLink.classList.remove('hidden');
+        // also reveal mobile nav dashboard link if present
+        const mobileDashboardLink = document.getElementById('mobile-lnk-dashboard');
+        if (mobileDashboardLink) mobileDashboardLink.classList.remove('hidden');
     } else {
         domMountHeaderWrapperZoneBox.innerHTML = `
             <button class="btn-header-login-trigger-action" onclick="toggleAuthModalWindowDisplayState(true, 'login')"><i class="fa-solid fa-circle-user"></i> Sign In / Register</button>
         `;
         if (domSessionProtectedDashboardNavLink) domSessionProtectedDashboardNavLink.classList.add('hidden');
+        const mobileDashboardLink = document.getElementById('mobile-lnk-dashboard');
+        if (mobileDashboardLink) mobileDashboardLink.classList.add('hidden');
     }
 }
 
@@ -220,16 +225,23 @@ function refreshAuthenticationStateHeaderView() {
 function toggleMobileNav() {
     const mobileNav = document.getElementById('mobile-nav');
     const toggleBtn = document.getElementById('mobile-nav-toggle');
+    const backdrop = document.getElementById('mobile-nav-backdrop');
     if (!mobileNav || !toggleBtn) return;
     const isHidden = mobileNav.classList.contains('hidden');
     if (isHidden) {
         mobileNav.classList.remove('hidden');
         mobileNav.classList.add('open');
+        if (backdrop) backdrop.classList.remove('hidden');
+        if (backdrop) backdrop.classList.add('open');
         toggleBtn.setAttribute('aria-expanded', 'true');
+        mobileNav.setAttribute('aria-hidden', 'false');
     } else {
         mobileNav.classList.add('hidden');
         mobileNav.classList.remove('open');
+        if (backdrop) backdrop.classList.add('hidden');
+        if (backdrop) backdrop.classList.remove('open');
         toggleBtn.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
     }
 }
 
@@ -240,6 +252,20 @@ window.addEventListener('resize', () => {
     if (window.innerWidth > 900) {
         mobileNav.classList.add('hidden');
         mobileNav.classList.remove('open');
+        const backdrop = document.getElementById('mobile-nav-backdrop');
+        if (backdrop) backdrop.classList.add('hidden');
+        if (backdrop) backdrop.classList.remove('open');
+    }
+});
+
+// Close mobile nav on Escape key
+document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape' || ev.key === 'Esc') {
+        const mobileNav = document.getElementById('mobile-nav');
+        if (!mobileNav) return;
+        if (!mobileNav.classList.contains('hidden')) {
+            toggleMobileNav();
+        }
     }
 });
 

@@ -38,14 +38,15 @@
 
             <!-- Mobile menu (shown on small screens) -->
             <div id="mobile-nav" class="mobile-nav hidden">
-                <a href="#" class="mobile-nav-link" onclick="toggleMobileNav(); navigateToWorkspaceView('portal')">Home Portal</a>
-                <a href="#" class="mobile-nav-link session-dependent-link hidden" id="mobile-lnk-dashboard" onclick="toggleMobileNav(); navigateToWorkspaceView('dashboard')">Client Dashboard</a>
-                <a href="admin.html" class="mobile-nav-link" onclick="toggleMobileNav()">Admin Portal</a>
-                <a href="#section-about" class="mobile-nav-link" onclick="toggleMobileNav()">About Identity</a>
-                <a href="#section-features" class="mobile-nav-link" onclick="toggleMobileNav()">Core Features</a>
-                <a href="#section-workflow" class="mobile-nav-link" onclick="toggleMobileNav()">System Operations</a>
-                <a href="#section-faqs" class="mobile-nav-link" onclick="toggleMobileNav()">FAQs Desk</a>
+                <a href="#home" class="mobile-nav-link" onclick="toggleMobileNav()">Home</a>
+                <a href="#features" class="mobile-nav-link" onclick="toggleMobileNav()">Features</a>
+                <a href="#pricing" class="mobile-nav-link" onclick="toggleMobileNav()">Pricing</a>
+                <a href="#contact" class="mobile-nav-link" onclick="toggleMobileNav()">Contact</a>
+                <a id="mobile-lnk-dashboard" href="admin.html" class="mobile-nav-link hidden" onclick="toggleMobileNav()">Admin</a>
             </div>
+    
+        <!-- Backdrop for mobile nav to close on outside click -->
+        <div id="mobile-nav-backdrop" class="mobile-nav-backdrop hidden" onclick="toggleMobileNav()" aria-hidden="true"></div>
 
         </div>
     </header>

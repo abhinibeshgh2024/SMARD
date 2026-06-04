@@ -153,12 +153,30 @@ body.enterprise-engine-body {
     gap: 8px;
     padding: 12px 20px;
     z-index: 999;
+    transition: transform 210ms cubic-bezier(.2,.9,.2,1), opacity 180ms ease;
+    transform-origin: top center;
+    transform: translateY(-8px);
+    opacity: 0;
 }
 
 .mobile-nav.hidden { display: none; }
-.mobile-nav.open { display: flex; }
-.mobile-nav-link { color: var(--google-text-primary-dark); text-decoration: none; padding: 10px 6px; border-radius: 6px; }
+.mobile-nav.open { display: flex; transform: translateY(0); opacity: 1; }
+.mobile-nav-link { color: var(--google-text-primary-dark); text-decoration: none; padding: 12px 10px; border-radius: 8px; font-size: 15px; }
 .mobile-nav-link:hover { background: var(--google-light-gray-surface); }
+
+/* Backdrop for mobile nav */
+.mobile-nav-backdrop {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.28);
+    z-index: 990;
+    transition: opacity 160ms ease;
+    opacity: 1;
+}
+.mobile-nav-backdrop.hidden { display: none; opacity: 0; }
 
 @media (max-width: 900px) {
     .central-navigation-links { display: none; }
