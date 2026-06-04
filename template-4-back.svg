@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="gradD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fc4a1a"/>
+      <stop offset="100%" stop-color="#f7b733"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="28" ry="28" fill="url(#gradD)"/>
+  <rect x="70" y="80" width="460" height="200" rx="20" ry="20" fill="rgba(255,255,255,0.08)"/>
+  <text x="95" y="150" font-family="Roboto, sans-serif" font-size="30" fill="#ffffff" font-weight="700">Premium Vector Module</text>
+  <text x="95" y="190" font-family="Roboto, sans-serif" font-size="14" fill="#ffe7b1">Backside detail with golden accents and emboss.</text>
+  <circle cx="480" cy="280" r="32" fill="#ffffff" opacity="0.18"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="grad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00c6ff"/>
+      <stop offset="100%" stop-color="#0072ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="28" ry="28" fill="url(#grad3)"/>
+  <rect x="45" y="55" width="510" height="290" rx="28" ry="28" fill="rgba(255,255,255,0.1)"/>
+  <text x="70" y="140" font-family="Roboto, sans-serif" font-size="34" fill="#ffffff" font-weight="700">Aurora Paradigm</text>
+  <text x="70" y="185" font-family="Roboto, sans-serif" font-size="15" fill="#dbeafe">Vibrant cyber gradient for modern creator brands.</text>
+  <circle cx="510" cy="310" r="40" fill="#ffffff" opacity="0.14"/>
+  <circle cx="520" cy="300" r="20" fill="#ffffff" opacity="0.28"/>
+</svg>

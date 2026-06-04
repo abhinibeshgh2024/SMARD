@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="gradA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="28" ry="28" fill="url(#gradA)"/>
+  <rect x="40" y="40" width="520" height="320" rx="24" ry="24" fill="rgba(255,255,255,0.05)"/>
+  <path d="M60 90 H540" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 130 H540" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+  <text x="60" y="200" font-family="Roboto, sans-serif" font-size="26" fill="#cbd5e1">QR Secure Matrix</text>
+  <text x="60" y="240" font-family="Roboto, sans-serif" font-size="14" fill="#94a3b8">Secure routing layer with live scan token validation.</text>
+  <circle cx="450" cy="280" r="48" fill="#22d3ee" opacity="0.15"/>
+  <circle cx="450" cy="280" r="20" fill="#7dd3fc"/>
+</svg>

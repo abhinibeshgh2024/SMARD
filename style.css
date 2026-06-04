@@ -411,19 +411,79 @@ body.enterprise-engine-body {
 
 .card-face {
     flex: 1;
-    height: 130px;
+    min-height: 130px;
     border-radius: 10px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.12);
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    padding: 12px;
-    text-align: center;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.15);
+    background-color: var(--google-text-tertiary-light);
+}
+
+.card-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-face-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.55);
     color: var(--google-white-bg);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.preview-card-face {
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-card-face img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+}
+
+.preview-card-caption {
+    margin-top: 16px;
+    text-align: left;
+    color: var(--google-text-primary-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.preview-card-caption strong {
+    font-size: 0.95rem;
+}
+
+.preview-card-caption .preview-card-label {
+    color: var(--google-text-secondary-muted);
+    font-size: 0.92rem;
+}
+
+.blueprint-meta-details-box {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 /* Layout Color Schemes Variables Mapping Presets Visual Graphics elements grids layers */

@@ -345,11 +345,11 @@ function selectProfileTemplateBlueprint(numericalBlueprintId, stringBlueprintNam
 }
 
 const blueprintPreviewData = {
-    1: { frontText: 'Obsidian Matte', backText: 'QR Secure Matrix', frontClass: 'b1-gradient-front', backClass: 'b1-gradient-back' },
-    2: { frontText: 'Platinum Executive', backText: 'Secure Layer Core', frontClass: 'b2-gradient-front', backClass: 'b2-gradient-back' },
-    3: { frontText: 'Aurora Horizon', backText: 'Mesh Identity Link', frontClass: 'b3-gradient-front', backClass: 'b3-gradient-back' },
-    4: { frontText: 'Luxe Rose Gold', backText: 'Premium Vector Module', frontClass: 'b4-gradient-front', backClass: 'b4-gradient-back' },
-    5: { frontText: 'Matrix Algorithmic', backText: 'Vector Data String', frontClass: 'b5-gradient-front', backClass: 'b5-gradient-back' }
+    1: { frontText: 'Obsidian Matte', backText: 'QR Secure Matrix', frontClass: 'b1-gradient-front', backClass: 'b1-gradient-back', frontImage: 'template-1-front.svg', backImage: 'template-1-back.svg' },
+    2: { frontText: 'Platinum Executive', backText: 'Secure Layer Core', frontClass: 'b2-gradient-front', backClass: 'b2-gradient-back', frontImage: 'template-2-front.svg', backImage: 'template-2-back.svg' },
+    3: { frontText: 'Aurora Horizon', backText: 'Mesh Identity Link', frontClass: 'b3-gradient-front', backClass: 'b3-gradient-back', frontImage: 'template-3-front.svg', backImage: 'template-3-back.svg' },
+    4: { frontText: 'Luxe Rose Gold', backText: 'Premium Vector Module', frontClass: 'b4-gradient-front', backClass: 'b4-gradient-back', frontImage: 'template-4-front.svg', backImage: 'template-4-back.svg' },
+    5: { frontText: 'Matrix Algorithmic', backText: 'Vector Data String', frontClass: 'b5-gradient-front', backClass: 'b5-gradient-back', frontImage: 'template-5-front.svg', backImage: 'template-5-back.svg' }
 };
 
 function openBlueprintPreview(blueprintId, blueprintTitle) {
@@ -363,11 +363,17 @@ function openBlueprintPreview(blueprintId, blueprintTitle) {
     if (title) title.innerText = `Preview: ${blueprintTitle}`;
     if (frontCard) {
         frontCard.className = `preview-card-face ${previewData.frontClass}`;
-        frontCard.querySelector('.preview-card-label').innerText = previewData.frontText;
+        const img = frontCard.querySelector('img');
+        const label = frontCard.querySelector('.preview-card-label');
+        if (img) img.src = previewData.frontImage;
+        if (label) label.innerText = previewData.frontText;
     }
     if (backCard) {
         backCard.className = `preview-card-face ${previewData.backClass}`;
-        backCard.querySelector('.preview-card-label').innerText = previewData.backText;
+        const img = backCard.querySelector('img');
+        const label = backCard.querySelector('.preview-card-label');
+        if (img) img.src = previewData.backImage;
+        if (label) label.innerText = previewData.backText;
     }
     if (modal) modal.classList.remove('hidden');
 }

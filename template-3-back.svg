@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="gradC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0072ff"/>
+      <stop offset="100%" stop-color="#00c6ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="28" ry="28" fill="url(#gradC)"/>
+  <rect x="50" y="50" width="500" height="300" rx="28" ry="28" fill="rgba(255,255,255,0.12)"/>
+  <text x="80" y="150" font-family="Roboto, sans-serif" font-size="32" fill="#ffffff" font-weight="700">Mesh Identity Link</text>
+  <text x="80" y="190" font-family="Roboto, sans-serif" font-size="14" fill="#dbeafe">Network signature and contact mapping rear layout.</text>
+  <path d="M85 260 H515" stroke="#ffffff" stroke-width="2" opacity="0.45"/>
+  <circle cx="510" cy="320" r="18" fill="#ffffff" opacity="0.22"/>
+</svg>
