@@ -42,6 +42,17 @@ function initializeApplicationRuntimeLifecycle() {
     }
     refreshAuthenticationStateHeaderView();
     navigateToWorkspaceView('portal');
+    // Ensure auth inputs are not prefilled for privacy
+    try {
+        const email = document.getElementById('field-auth-email');
+        const pass = document.getElementById('field-auth-password');
+        const fullname = document.getElementById('field-auth-fullname');
+        const phone = document.getElementById('field-auth-phone');
+        if (email) { email.value = ''; email.placeholder = 'email@example.com'; }
+        if (pass) { pass.value = ''; pass.placeholder = 'Password'; }
+        if (fullname) { fullname.value = ''; }
+        if (phone) { phone.value = ''; }
+    } catch (e) {}
 }
 
 // Global Workspace Client-Side Router Router Controller Simulations Engines

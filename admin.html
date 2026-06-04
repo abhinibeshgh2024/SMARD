@@ -38,11 +38,11 @@
                 <div class="form-inputs-layout-grid">
                     <div class="form-input-element-group">
                         <label for="admin-phone">Phone Number</label>
-                        <input type="tel" id="admin-phone" placeholder="9142543191">
+                        <input type="tel" id="admin-phone" placeholder="Phone number" value="">
                     </div>
                     <div class="form-input-element-group">
                         <label for="admin-password">Password</label>
-                        <input type="password" id="admin-password" placeholder="••••••••">
+                        <input type="password" id="admin-password" placeholder="Password" value="">
                     </div>
                 </div>
 
@@ -170,10 +170,10 @@
                     localStorage.setItem('smardAdminSession', JSON.stringify({ authenticated: true, timestamp: Date.now() }));
                     document.getElementById('admin-auth-panel').classList.add('hidden');
                     document.getElementById('admin-content-panel').classList.remove('hidden');
-                    document.getElementById('admin-user-name').innerText = 'Admin (' + phone + ')';
+                    document.getElementById('admin-user-name').innerText = 'Admin';
                     refreshAdminData();
                 } else {
-                    errorDiv.innerText = 'Invalid phone or password. Default: 9142543191 / abhi4natnex26';
+                    errorDiv.innerText = 'Invalid phone or password.';
                     errorDiv.classList.remove('hidden');
                 }
             } else {
@@ -183,10 +183,10 @@
                     localStorage.setItem('smardAdminSession', JSON.stringify({ authenticated: true, timestamp: Date.now() }));
                     document.getElementById('admin-auth-panel').classList.add('hidden');
                     document.getElementById('admin-content-panel').classList.remove('hidden');
-                    document.getElementById('admin-user-name').innerText = 'Admin (' + phone + ')';
+                    document.getElementById('admin-user-name').innerText = 'Admin';
                     refreshAdminData();
                 } else {
-                    errorDiv.innerText = 'Admin account creation not available. Use the default credentials to sign in.';
+                    errorDiv.innerText = 'Admin account creation not available.';
                     errorDiv.classList.remove('hidden');
                 }
             }
@@ -245,7 +245,7 @@
                     adminAuthenticatedSession = true;
                     document.getElementById('admin-auth-panel').classList.add('hidden');
                     document.getElementById('admin-content-panel').classList.remove('hidden');
-                    document.getElementById('admin-user-name').innerText = 'Admin (9142543191)';
+                    document.getElementById('admin-user-name').innerText = 'Admin';
                     refreshAdminData();
                 } catch (e) {
                     adminAuthenticatedSession = false;
