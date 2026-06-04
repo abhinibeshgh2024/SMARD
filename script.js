@@ -10,6 +10,9 @@ const UPI_TRANSACTION_NOTE = 'Smar profile order payment';
 const UPI_CURRENCY = 'INR';
 const WHATSAPP_PHONE = '919142543191';
 let currentSelectedInvoiceAmount = 0;
+// Mobile nav focus-trap state
+let _mobileNavFocusTrapHandler = null;
+let _mobileNavPreviouslyFocusedElement = null;
 
 // Simple hash function for password hashing
 function simpleHash(str) {
@@ -235,6 +238,10 @@ function toggleMobileNav() {
         if (backdrop) backdrop.classList.add('open');
         toggleBtn.setAttribute('aria-expanded', 'true');
         mobileNav.setAttribute('aria-hidden', 'false');
+        // autofocus the first link and enable focus-trap
+        try {
+            enableMobileNavFocusTrap(mobileNav, toggleBtn);
+        } catch (e) {}
     } else {
         mobileNav.classList.add('hidden');
         mobileNav.classList.remove('open');
@@ -242,6 +249,8 @@ function toggleMobileNav() {
         if (backdrop) backdrop.classList.remove('open');
         toggleBtn.setAttribute('aria-expanded', 'false');
         mobileNav.setAttribute('aria-hidden', 'true');
+        // disable focus trap and restore focus
+        try { disableMobileNavFocusTrap(toggleBtn); } catch (e) {}
     }
 }
 
@@ -258,16 +267,59 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Close mobile nav on Escape key
-document.addEventListener('keydown', (ev) => {
-    if (ev.key === 'Escape' || ev.key === 'Esc') {
-        const mobileNav = document.getElementById('mobile-nav');
-        if (!mobileNav) return;
-        if (!mobileNav.classList.contains('hidden')) {
-            toggleMobileNav();
+// Focus trap helper to keep keyboard focus inside mobile nav when open
+function enableMobileNavFocusTrap(mobileNav, toggleBtn) {
+    _mobileNavPreviouslyFocusedElement = document.activeElement;
+    const focusFirst = () => {
+        const focusable = mobileNav.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusable && focusable.length) {
+            focusable[0].focus();
+        } else if (toggleBtn) {
+            toggleBtn.focus();
         }
+    };
+
+    _mobileNavFocusTrapHandler = function (e) {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+            toggleMobileNav();
+            return;
+        }
+        if (e.key !== 'Tab') return;
+        const focusable = Array.from(mobileNav.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+            .filter(el => !el.disabled && el.offsetParent !== null);
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+            if (document.activeElement === first || document.activeElement === mobileNav) {
+                e.preventDefault();
+                last.focus();
+            }
+        } else {
+            if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    };
+
+    document.addEventListener('keydown', _mobileNavFocusTrapHandler);
+    // small timeout to ensure element is visible before focusing
+    setTimeout(focusFirst, 80);
+}
+
+function disableMobileNavFocusTrap(toggleBtn) {
+    if (_mobileNavFocusTrapHandler) {
+        document.removeEventListener('keydown', _mobileNavFocusTrapHandler);
+        _mobileNavFocusTrapHandler = null;
     }
-});
+    if (_mobileNavPreviouslyFocusedElement && _mobileNavPreviouslyFocusedElement.focus) {
+        try { _mobileNavPreviouslyFocusedElement.focus(); } catch (e) {}
+    } else if (toggleBtn) {
+        try { toggleBtn.focus(); } catch (e) {}
+    }
+    _mobileNavPreviouslyFocusedElement = null;
+}
 
 // ================= VISUAL BLUEPRINTS CAPTURE AND SUBSTRATE MANAGEMENT SELECTION LAYER =================
 function selectProfileTemplateBlueprint(numericalBlueprintId, stringBlueprintNameTitle) {
