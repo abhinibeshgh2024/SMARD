@@ -80,7 +80,10 @@
                             <div class="blueprint-meta-details-box">
                                 <h3>Classic Obsidian</h3>
                                 <p>Sleek deep slate aesthetic tailored perfectly for technology architects and security professionals.</p>
+<div class="blueprint-action-cta-group">
+                                <button class="btn-blueprint-preview-action" onclick="openBlueprintPreview(1, 'Classic Obsidian')">Preview</button>
                                 <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(1, 'Classic Obsidian')">Choose Blueprint</button>
+                            </div>
                             </div>
                         </div>
 
@@ -92,7 +95,10 @@
                             <div class="blueprint-meta-details-box">
                                 <h3>Minimal Platinum</h3>
                                 <p>Clean silver brushed finish layouts emphasizing minimal typography matching executive nodes profiles.</p>
+                                <div class="blueprint-action-cta-group">
+                                <button class="btn-blueprint-preview-action" onclick="openBlueprintPreview(2, 'Minimal Platinum')">Preview</button>
                                 <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(2, 'Minimal Platinum')">Choose Blueprint</button>
+                            </div>
                             </div>
                         </div>
 
@@ -104,7 +110,10 @@
                             <div class="blueprint-meta-details-box">
                                 <h3>Aurora Paradigm</h3>
                                 <p>Vibrant energy shifting cyber gradients designed specifically for creator networks and modern founders.</p>
+                                <div class="blueprint-action-cta-group">
+                                <button class="btn-blueprint-preview-action" onclick="openBlueprintPreview(3, 'Aurora Paradigm')">Preview</button>
                                 <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(3, 'Aurora Paradigm')">Choose Blueprint</button>
+                            </div>
                             </div>
                         </div>
 
@@ -116,7 +125,10 @@
                             <div class="blueprint-meta-details-box">
                                 <h3>Rose Gold Luxury</h3>
                                 <p>Sophisticated warm metal tones crafted meticulously for global design agencies and brand consultants.</p>
+                                <div class="blueprint-action-cta-group">
+                                <button class="btn-blueprint-preview-action" onclick="openBlueprintPreview(4, 'Rose Gold Luxury')">Preview</button>
                                 <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(4, 'Rose Gold Luxury')">Choose Blueprint</button>
+                            </div>
                             </div>
                         </div>
 
@@ -128,7 +140,10 @@
                             <div class="blueprint-meta-details-box">
                                 <h3>Matrix Crypto Cyber</h3>
                                 <p>High contrast dark terminal neon green aesthetics for cryptography developers and hardware engineers.</p>
+                                <div class="blueprint-action-cta-group">
+                                <button class="btn-blueprint-preview-action" onclick="openBlueprintPreview(5, 'Matrix Crypto Cyber')">Preview</button>
                                 <button class="btn-blueprint-selection-action" onclick="selectProfileTemplateBlueprint(5, 'Matrix Crypto Cyber')">Choose Blueprint</button>
+                            </div>
                             </div>
                         </div>
 
@@ -378,6 +393,24 @@
 
                 <button class="btn-execute-auth-action-submission" id="btn-trigger-auth-execution-engine" onclick="processClientAuthFormSubmission()">Process Security Verification Handshake</button>
             </div>
+        </div>
+    </div>
+
+    <div id="blueprint-preview-modal" class="modal-blur-curtain-overlay hidden" onclick="closeBlueprintPreview()">
+        <div class="preview-modal-panel" onclick="event.stopPropagation()">
+            <button class="btn-close-modal-window-trigger" onclick="closeBlueprintPreview()" aria-label="Close preview">&times;</button>
+            <h2 id="preview-modal-title">Preview</h2>
+            <div class="preview-modal-grid">
+                <div id="preview-card-front" class="preview-card-face b1-gradient-front">
+                    <div class="preview-card-title">Front Side</div>
+                    <span class="preview-card-label">Obsidian Matte</span>
+                </div>
+                <div id="preview-card-back" class="preview-card-face b1-gradient-back">
+                    <div class="preview-card-title">Back Side</div>
+                    <span class="preview-card-label">QR Secure Matrix</span>
+                </div>
+            </div>
+            <button class="btn-blueprint-preview-action" onclick="closeBlueprintPreview()">Close Preview</button>
         </div>
     </div>
 

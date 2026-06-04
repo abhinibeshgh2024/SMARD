@@ -344,6 +344,39 @@ function selectProfileTemplateBlueprint(numericalBlueprintId, stringBlueprintNam
     executePricingMatrixCalculationsEngine();
 }
 
+const blueprintPreviewData = {
+    1: { frontText: 'Obsidian Matte', backText: 'QR Secure Matrix', frontClass: 'b1-gradient-front', backClass: 'b1-gradient-back' },
+    2: { frontText: 'Platinum Executive', backText: 'Secure Layer Core', frontClass: 'b2-gradient-front', backClass: 'b2-gradient-back' },
+    3: { frontText: 'Aurora Horizon', backText: 'Mesh Identity Link', frontClass: 'b3-gradient-front', backClass: 'b3-gradient-back' },
+    4: { frontText: 'Luxe Rose Gold', backText: 'Premium Vector Module', frontClass: 'b4-gradient-front', backClass: 'b4-gradient-back' },
+    5: { frontText: 'Matrix Algorithmic', backText: 'Vector Data String', frontClass: 'b5-gradient-front', backClass: 'b5-gradient-back' }
+};
+
+function openBlueprintPreview(blueprintId, blueprintTitle) {
+    const previewData = blueprintPreviewData[blueprintId];
+    if (!previewData) return;
+    const modal = document.getElementById('blueprint-preview-modal');
+    const title = document.getElementById('preview-modal-title');
+    const frontCard = document.getElementById('preview-card-front');
+    const backCard = document.getElementById('preview-card-back');
+
+    if (title) title.innerText = `Preview: ${blueprintTitle}`;
+    if (frontCard) {
+        frontCard.className = `preview-card-face ${previewData.frontClass}`;
+        frontCard.querySelector('.preview-card-label').innerText = previewData.frontText;
+    }
+    if (backCard) {
+        backCard.className = `preview-card-face ${previewData.backClass}`;
+        backCard.querySelector('.preview-card-label').innerText = previewData.backText;
+    }
+    if (modal) modal.classList.remove('hidden');
+}
+
+function closeBlueprintPreview() {
+    const modal = document.getElementById('blueprint-preview-modal');
+    if (modal) modal.classList.add('hidden');
+}
+
 function evaluateHardwareInfrastructureRequirements(domSelectTagReference) {
     if (domSelectTagReference.value === 'nfc-wireless') {
         domSelectTagReference.classList.add('nfc-disabled-state-input-style');
