@@ -385,24 +385,26 @@ body.enterprise-engine-body {
 /* ================= SMART BLUEPRINTS LAYOUTS GRID BLOCKS STRUCTURES ================= */
 .smart-blueprints-showcase-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 28px;
     margin-bottom: 56px;
+    align-items: stretch;
 }
 
 .blueprint-box {
     display: flex;
     flex-direction: column;
     height: 100%;
+    align-items: stretch;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 900px) {
     .smart-blueprints-showcase-grid {
-        grid-template-columns: repeat(2, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
     .smart-blueprints-showcase-grid {
         grid-template-columns: 1fr;
     }
@@ -420,11 +422,12 @@ body.enterprise-engine-body {
     border-bottom: 1px solid var(--google-border-color-subtle);
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .card-face {
-    flex: 1;
-    min-height: 130px;
+    flex: 1 1 220px;
+    min-height: 180px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -440,6 +443,17 @@ body.enterprise-engine-body {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+@media (max-width: 720px) {
+    .blueprint-vector-preview-box {
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .card-face {
+        min-height: 170px;
+    }
 }
 
 .card-face-caption {
